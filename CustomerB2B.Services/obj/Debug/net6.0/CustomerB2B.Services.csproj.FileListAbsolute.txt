@@ -1,0 +1,14 @@
+D:\Project\CustomerB2B\CustomerB2B.Services\bin\Debug\net6.0\CustomerB2B.Services.exe
+D:\Project\CustomerB2B\CustomerB2B.Services\bin\Debug\net6.0\CustomerB2B.Services.deps.json
+D:\Project\CustomerB2B\CustomerB2B.Services\bin\Debug\net6.0\CustomerB2B.Services.runtimeconfig.json
+D:\Project\CustomerB2B\CustomerB2B.Services\bin\Debug\net6.0\CustomerB2B.Services.dll
+D:\Project\CustomerB2B\CustomerB2B.Services\bin\Debug\net6.0\CustomerB2B.Services.pdb
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.AssemblyInfoInputs.cache
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.AssemblyInfo.cs
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.csproj.CoreCompileInputs.cache
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.dll
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\refint\CustomerB2B.Services.dll
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.pdb
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\CustomerB2B.Services.genruntimeconfig.cache
+D:\Project\CustomerB2B\CustomerB2B.Services\obj\Debug\net6.0\ref\CustomerB2B.Services.dll

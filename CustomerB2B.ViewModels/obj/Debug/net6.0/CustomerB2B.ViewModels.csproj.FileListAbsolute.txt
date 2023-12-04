@@ -1,0 +1,14 @@
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\bin\Debug\net6.0\CustomerB2B.ViewModels.exe
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\bin\Debug\net6.0\CustomerB2B.ViewModels.deps.json
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\bin\Debug\net6.0\CustomerB2B.ViewModels.runtimeconfig.json
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\bin\Debug\net6.0\CustomerB2B.ViewModels.dll
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\bin\Debug\net6.0\CustomerB2B.ViewModels.pdb
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.AssemblyInfoInputs.cache
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.AssemblyInfo.cs
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.csproj.CoreCompileInputs.cache
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.dll
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\refint\CustomerB2B.ViewModels.dll
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.pdb
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\CustomerB2B.ViewModels.genruntimeconfig.cache
+D:\Project\CustomerB2B\CustomerB2B.ViewModels\obj\Debug\net6.0\ref\CustomerB2B.ViewModels.dll
