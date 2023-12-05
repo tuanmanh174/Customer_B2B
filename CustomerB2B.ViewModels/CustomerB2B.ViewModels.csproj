@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerB2B.Repositories\CustomerB2B.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
