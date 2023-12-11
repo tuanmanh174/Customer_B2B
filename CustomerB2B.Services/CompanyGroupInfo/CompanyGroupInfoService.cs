@@ -38,7 +38,6 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             }
             var result = new PagedResult<CompanyGroupInfoViewModel>()
             {
-
                 Data = vmList,
                 TotalItems = totalCount,
                 PageNumber = pageNumber,
