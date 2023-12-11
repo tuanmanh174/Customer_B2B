@@ -17,7 +17,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerB2BConne
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<CustomerB2BDbContext>();
 
-builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

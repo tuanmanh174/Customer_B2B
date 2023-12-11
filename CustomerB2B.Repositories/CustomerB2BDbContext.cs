@@ -1,5 +1,4 @@
-﻿using CustomerB2B.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerB2B.Repositories
@@ -11,7 +10,6 @@ namespace CustomerB2B.Repositories
 
         }
 
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<CompanyType> CompanyTypes { get; set; }
         public DbSet<CompanyGroup> CompanyGroups { get; set; }
         public DbSet<Company> Companíes { get; set; }

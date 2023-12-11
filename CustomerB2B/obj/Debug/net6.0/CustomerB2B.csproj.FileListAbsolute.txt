@@ -288,8 +288,6 @@ D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\runtimes\win-arm\native\e_sq
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
-D:\Project\CustomerB2B\CustomerB2B\obj\Debug\net6.0\CustomerB2B.RazorAssemblyInfo.cache
-D:\Project\CustomerB2B\CustomerB2B\obj\Debug\net6.0\CustomerB2B.RazorAssemblyInfo.cs
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Models.deps.json
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Models.runtimeconfig.json
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Models.exe

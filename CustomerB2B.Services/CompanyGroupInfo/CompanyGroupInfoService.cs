@@ -11,9 +11,17 @@ namespace CustomerB2B.Services.CompanyGroupInfo
         {
             _unitOfWork = unitOfWork;
         }
+
+        public void DeleteCompnayGroup(string id)
+        {
+            var model = _unitOfWork.GenericRepository<CompanyGroup>().GetById(id);
+            _unitOfWork.GenericRepository<CompanyGroup>().Delete(model);
+            _unitOfWork.Save();
+        }
+
         public PagedResult<CompanyGroupInfoViewModel> GetAll(int pageNumber, int pageSize)
         {
-            var companyGroupViewModel = new CompanyGroupInfoViewModel();
+
             int totalCount;
             List<CompanyGroupInfoViewModel> vmList = new List<CompanyGroupInfoViewModel>();
             try
@@ -22,7 +30,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
                 var modelList = _unitOfWork.GenericRepository<CompanyGroup>().GetAll()
                     .Skip(ExcludeRecords).Take(pageSize).ToList();
                 totalCount = _unitOfWork.GenericRepository<CompanyGroup>().GetAll().ToList().Count;
-                //vmList = ConvertModelToViewModelList(modelList);
+                vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)
             {
@@ -39,9 +47,36 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             return result;
         }
 
-        //private List<CompanyGroupInfoViewModel> ConvertModelToViewModelList(List<CompanyGroup> modelList)
-        //{
-           
-        //}
+        public CompanyGroupInfoViewModel GetCompanyGroupById(string id)
+        {
+            var model = _unitOfWork.GenericRepository<CompanyGroup>().GetById(id);
+            var vm = new CompanyGroupInfoViewModel(model);
+            return vm;
+        }
+
+        public void InsertCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo)
+        {
+            var model = new CompanyGroupInfoViewModel().ConvertViewMoodel(companyGroupInfo);
+            _unitOfWork.GenericRepository<CompanyGroup>().Add(model);
+            _unitOfWork.Save();
+        }
+
+        public void UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo)
+        {
+            var model = new CompanyGroupInfoViewModel().ConvertViewMoodel(companyGroupInfo);
+            var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(model);
+            modelById.Code = companyGroupInfo.GroupCode;
+            modelById.Name = companyGroupInfo.GroupName;
+            modelById.UpdatedDate = DateTime.Now;
+            _unitOfWork.GenericRepository<CompanyGroup>().Update(modelById);
+            _unitOfWork.Save();
+        }
+
+        private List<CompanyGroupInfoViewModel> ConvertModelToViewModelList(List<CompanyGroup> modelList)
+        {
+            return modelList.Select(x => new CompanyGroupInfoViewModel(x)).ToList();
+        }
+
+
     }
 }

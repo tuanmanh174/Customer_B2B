@@ -9,23 +9,25 @@ namespace CustomerB2B.ViewModels
 {
     public class CompanyGroupInfoViewModel
     {
+        public string Id { get; set; }
         public string GroupName { get; set; }
         public string GroupCode { get; set; }
         public CompanyGroupInfoViewModel() { }
 
-        public CompanyGroupInfoViewModel(CompanyGroupInfoViewModel model)
+        public CompanyGroupInfoViewModel(CompanyGroup model)
         {
-            GroupName = model.GroupName;
-            GroupCode = model.GroupCode;
+            Id = model.Id.ToString();
+            GroupName = model.Name;
+            GroupCode = model.Code;
         }
 
-        public CompanyGroup ConvertCompanyGroupToViewModel(CompanyGroupInfoViewModel model)
+        public CompanyGroup ConvertViewMoodel(CompanyGroupInfoViewModel model)
         {
             return new CompanyGroup
             {
+                Id = Guid.Parse(model.Id),
                 Code = model.GroupCode,
                 Name = model.GroupName,
-
             };
         }
     }

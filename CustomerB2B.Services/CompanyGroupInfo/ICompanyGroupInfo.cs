@@ -11,5 +11,9 @@ namespace CustomerB2B.Services.CompanyGroupInfo
     public interface ICompanyGroupInfo
     {
         PagedResult<CompanyGroupInfoViewModel> GetAll(int pageNumber, int pageSize);
+        CompanyGroupInfoViewModel GetCompanyGroupById(string id);
+        void UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo);
+        void InsertCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo);
+        void DeleteCompnayGroup(string id);
     }
 }
