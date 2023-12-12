@@ -1,10 +1,9 @@
 using CustomerB2B.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Internal;
-using CustomerB2B.Utilities;
 using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Repositories.Implementation;
+using CustomerB2B.Services.CompanyGroupInfo;
+using CustomerB2B.Services.CompanyTypeInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,17 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<CustomerB2BDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerB2BConnection")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<CustomerB2BDbContext>();
+
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<CustomerB2BDbContext>();
-
-builder.Services.AddDefaultIdentity<IdentityUser>()
-    .AddEntityFrameworkStores<CustomerB2BDbContext>();
+builder.Services.AddScoped<ICompanyGroupInfo, CompanyGroupInfoService>();
+builder.Services.AddScoped<ICompanyTypeInfo, CompanyTypeInfoService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -39,7 +33,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-DataSedding();
 app.UseAuthentication(); ;
 
 app.UseAuthorization();
@@ -48,12 +41,3 @@ app.MapControllers();
 
 app.Run();
 
-void DataSedding()
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        var dbInitializer = scope.ServiceProvider.
-            GetRequiredService<IDbSetInitializer>();
-        //dbInitializer.InitializeSets();
-    }
-}

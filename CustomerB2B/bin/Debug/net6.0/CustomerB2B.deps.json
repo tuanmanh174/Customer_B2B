@@ -9,6 +9,7 @@
       "CustomerB2B/1.0.0": {
         "dependencies": {
           "CustomerB2B.Repositories": "1.0.0",
+          "CustomerB2B.Services": "1.0.0",
           "CustomerB2B.Utilities": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.AspNetCore.Identity.UI": "6.0.23",
@@ -2812,6 +2813,16 @@
           "CustomerB2B.Repositories.dll": {}
         }
       },
+      "CustomerB2B.Services/1.0.0": {
+        "dependencies": {
+          "CustomerB2B.Repositories": "1.0.0",
+          "CustomerB2B.Utilities": "1.0.0",
+          "CustomerB2B.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "CustomerB2B.Services.dll": {}
+        }
+      },
       "CustomerB2B.Utilities/1.0.0": {
         "dependencies": {
           "CustomerB2B.Models": "1.0.0",
@@ -2820,6 +2831,14 @@
         },
         "runtime": {
           "CustomerB2B.Utilities.dll": {}
+        }
+      },
+      "CustomerB2B.ViewModels/1.0.0": {
+        "dependencies": {
+          "CustomerB2B.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "CustomerB2B.ViewModels.dll": {}
         }
       }
     }
@@ -4499,7 +4518,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "CustomerB2B.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CustomerB2B.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CustomerB2B.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

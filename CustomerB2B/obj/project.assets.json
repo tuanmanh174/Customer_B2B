@@ -4193,6 +4193,21 @@
           "bin/placeholder/CustomerB2B.Repositories.dll": {}
         }
       },
+      "CustomerB2B.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CustomerB2B.Repositories": "1.0.0",
+          "CustomerB2B.Utilities": "1.0.0",
+          "CustomerB2B.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CustomerB2B.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomerB2B.Services.dll": {}
+        }
+      },
       "CustomerB2B.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4206,6 +4221,19 @@
         },
         "runtime": {
           "bin/placeholder/CustomerB2B.Utilities.dll": {}
+        }
+      },
+      "CustomerB2B.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CustomerB2B.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CustomerB2B.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomerB2B.ViewModels.dll": {}
         }
       }
     }
@@ -11926,15 +11954,26 @@
       "path": "../CustomerB2B.Repositories/CustomerB2B.Repositories.csproj",
       "msbuildProject": "../CustomerB2B.Repositories/CustomerB2B.Repositories.csproj"
     },
+    "CustomerB2B.Services/1.0.0": {
+      "type": "project",
+      "path": "../CustomerB2B.Services/CustomerB2B.Services.csproj",
+      "msbuildProject": "../CustomerB2B.Services/CustomerB2B.Services.csproj"
+    },
     "CustomerB2B.Utilities/1.0.0": {
       "type": "project",
       "path": "../CustomerB2B.Utilities/CustomerB2B.Utilities.csproj",
       "msbuildProject": "../CustomerB2B.Utilities/CustomerB2B.Utilities.csproj"
+    },
+    "CustomerB2B.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../CustomerB2B.ViewModels/CustomerB2B.ViewModels.csproj",
+      "msbuildProject": "../CustomerB2B.ViewModels/CustomerB2B.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "CustomerB2B.Repositories >= 1.0.0",
+      "CustomerB2B.Services >= 1.0.0",
       "CustomerB2B.Utilities >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.25",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.23",
@@ -11975,6 +12014,9 @@
           "projectReferences": {
             "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj": {
               "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj"
+            },
+            "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj": {
+              "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj"
             },
             "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj": {
               "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj"

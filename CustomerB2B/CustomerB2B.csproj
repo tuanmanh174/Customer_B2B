@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomerB2B.Repositories\CustomerB2B.Repositories.csproj" />
+    <ProjectReference Include="..\CustomerB2B.Services\CustomerB2B.Services.csproj" />
     <ProjectReference Include="..\CustomerB2B.Utilities\CustomerB2B.Utilities.csproj" />
   </ItemGroup>
 

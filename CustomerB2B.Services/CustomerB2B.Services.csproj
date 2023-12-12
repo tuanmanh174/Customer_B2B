@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CompanyInfo\" />
-    <Folder Include="CompanyTypeInfo\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CustomerB2B.Repositories\CustomerB2B.Repositories.csproj" />
     <ProjectReference Include="..\CustomerB2B.Utilities\CustomerB2B.Utilities.csproj" />
     <ProjectReference Include="..\CustomerB2B.ViewModels\CustomerB2B.ViewModels.csproj" />

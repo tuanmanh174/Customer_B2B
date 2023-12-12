@@ -140,6 +140,71 @@
         }
       }
     },
+    "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj",
+        "projectName": "CustomerB2B.Services",
+        "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj": {
+                "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj"
+              },
+              "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj": {
+                "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj"
+              },
+              "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\CustomerB2B.ViewModels.csproj": {
+                "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\CustomerB2B.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -208,6 +273,65 @@
         }
       }
     },
+    "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\CustomerB2B.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\CustomerB2B.ViewModels.csproj",
+        "projectName": "CustomerB2B.ViewModels",
+        "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\CustomerB2B.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\CustomerB2B\\CustomerB2B.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj": {
+                "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Project\\CustomerB2B\\CustomerB2B\\CustomerB2B.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -234,6 +358,9 @@
             "projectReferences": {
               "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj": {
                 "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj"
+              },
+              "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj": {
+                "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj"
               },
               "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj": {
                 "projectPath": "D:\\Project\\CustomerB2B\\CustomerB2B.Utilities\\CustomerB2B.Utilities.csproj"

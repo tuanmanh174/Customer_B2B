@@ -298,3 +298,13 @@ D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Utilities.runtim
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Utilities.exe
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Utilities.dll
 D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Utilities.pdb
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Services.deps.json
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Services.runtimeconfig.json
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.ViewModels.deps.json
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.ViewModels.runtimeconfig.json
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.ViewModels.exe
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Services.exe
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Services.dll
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.ViewModels.dll
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.Services.pdb
+D:\Project\CustomerB2B\CustomerB2B\bin\Debug\net6.0\CustomerB2B.ViewModels.pdb
