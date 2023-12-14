@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CustomerB2B.Repositories
-build_property.ProjectDir = D:\Project\CustomerB2B\CustomerB2B.Repositories\
+build_property.ProjectDir = D:\Project\Customer_B2B\CustomerB2B.Repositories\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
