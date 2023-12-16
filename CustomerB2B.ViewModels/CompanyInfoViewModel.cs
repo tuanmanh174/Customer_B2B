@@ -31,13 +31,15 @@ namespace CustomerB2B.ViewModels
             Code = model.Code;
         }
 
-        public Company ConvertViewModel(CompanyInfoViewModel model)
+        public Company ConvertViewModel(CompanyInfoViewModel model, string userName)
         {
             return new Company
             {
                 Id = new Guid(),
                 Code = model.Code,
                 Name = model.Name,
+                CreatedBy = userName,
+                CreatedDate = DateTime.Now,
             };
         }
 

@@ -5,6 +5,7 @@ using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,11 @@ namespace CustomerB2B.Services.CompanyInfo
     {
 
         private IUnitOfWork _unitOfWork;
-        public CompanyInfoService(IUnitOfWork unitOfWork)
+        private readonly CustomerB2BDbContext _dbContext;
+        public CompanyInfoService(IUnitOfWork unitOfWork, CustomerB2BDbContext dbContext)
         {
             _unitOfWork = unitOfWork;
+            _dbContext = dbContext;
         }
         public ResponseData DeleteCompany(string id)
         {
@@ -75,12 +78,19 @@ namespace CustomerB2B.Services.CompanyInfo
             return vm;
         }
 
-        public ResponseData InsertCompany(CompanyInfoViewModel companyTypeInfo)
+        public ResponseData InsertCompany(CompanyInfoViewModel companyInfo, string userName)
         {
             ResponseData res = new ResponseData();
             try
             {
-                var model = new CompanyInfoViewModel().ConvertViewModel(companyTypeInfo);
+                var modelCompanyInfo = _dbContext.Companies.Where(x => x.Code == companyInfo.Code).FirstOrDefault();
+                if (modelCompanyInfo != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    return res;
+                }
+                var model = new CompanyInfoViewModel().ConvertViewModel(companyInfo, userName);
                 _unitOfWork.GenericRepository<Company>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -98,14 +108,22 @@ namespace CustomerB2B.Services.CompanyInfo
 
         }
 
-        public ResponseData UpdateCompany(CompanyInfoViewModel companyInfo, string id)
+        public ResponseData UpdateCompany(CompanyInfoViewModel companyInfo, string id, string userName)
         {
             ResponseData res = new ResponseData();
             try
             {
+                var modelCompanyInfo = _dbContext.Companies.Where(x => x.Code == companyInfo.Code).FirstOrDefault();
+                if (modelCompanyInfo != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    return res;
+                }
                 var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(id);
                 modelById.Code = companyInfo.Code;
                 modelById.Name = companyInfo.Name;
+                modelById.UpdatedBy = userName;
                 modelById.UpdatedDate = DateTime.Now;
                 _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
                 _unitOfWork.Save();
