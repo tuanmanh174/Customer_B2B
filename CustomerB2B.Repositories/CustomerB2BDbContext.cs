@@ -14,5 +14,6 @@ namespace CustomerB2B.Repositories
         public DbSet<CompanyGroup> CompanyGroups { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<CompanyTypeCompany> CompanyTypeCompany { get; set; }
+        public DbSet<CompanyRepresentative> CompanyRepresentatives { get; set; }
     }
 }
