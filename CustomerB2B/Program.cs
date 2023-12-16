@@ -4,6 +4,7 @@ using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Repositories.Implementation;
 using CustomerB2B.Services.CompanyGroupInfo;
 using CustomerB2B.Services.CompanyTypeInfo;
+using CustomerB2B.Services.CompanyTypeCompanyInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerB2BConne
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICompanyGroupInfo, CompanyGroupInfoService>();
 builder.Services.AddScoped<ICompanyTypeInfo, CompanyTypeInfoService>();
-
+builder.Services.AddScoped<ICompanyTypeCompanyInfo, CompanyTypeCompnayInfoService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

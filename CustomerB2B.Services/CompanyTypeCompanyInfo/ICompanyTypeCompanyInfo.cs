@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CustomerB2B.Services.CompanyTypeCompanyInfo
 {
-    public interface ICompanyTypeCompanyService
+    public interface ICompanyTypeCompanyInfo
     {
         ResponseData RemoveCompanyTypeCompany(string companyId, string companyTypeId);
         ResponseData InsertCompanyTypeCompany(CompanyTypeCompanyInfoViewModel companyTypeCompanyInfo);

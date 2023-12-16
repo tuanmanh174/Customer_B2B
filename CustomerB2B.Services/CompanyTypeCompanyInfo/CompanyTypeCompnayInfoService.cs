@@ -12,15 +12,18 @@ using System.Threading.Tasks;
 
 namespace CustomerB2B.Services.CompanyTypeCompanyInfo
 {
-    public class CompanyTypeCompnayService : ICompanyTypeCompanyService
+    public class CompanyTypeCompnayInfoService : ICompanyTypeCompanyInfo
     {
         private IUnitOfWork _unitOfWork;
         private CustomerB2BDbContext _dbContext;
-        public CompanyTypeCompnayService(IUnitOfWork unitOfWork, CustomerB2BDbContext dbContext)
+        public CompanyTypeCompnayInfoService(IUnitOfWork unitOfWork, CustomerB2BDbContext dbContext)
         {
             _unitOfWork = unitOfWork;
             _dbContext = dbContext;
         }
+
+
+
         public ResponseData InsertCompanyTypeCompany(CompanyTypeCompanyInfoViewModel companyTypeCompanyInfo)
         {
             ResponseData res = new ResponseData();
@@ -56,7 +59,7 @@ namespace CustomerB2B.Services.CompanyTypeCompanyInfo
             try
             {
                 var modelCompanyTypeCompany = _dbContext.CompanyTypeCompany.Where(x => x.CompanyTypeId == companyTypeId && x.CompanyId == companyId).FirstOrDefault();
-                if (modelCompanyTypeCompany != null)
+                if (modelCompanyTypeCompany == null)
                 {
                     res.ResponseCode = ErrorCode.DATA_NOT_EXISTS_CODE;
                     res.ResponseMessage = ErrorCode.DATA_NOT_EXISTS_MESSAGE;
