@@ -13,7 +13,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
     {
         PagedResult<CompanyGroupInfoViewModel> GetAll(int pageNumber, int pageSize);
         CompanyGroupInfoViewModel GetCompanyGroupById(string id);
-        ResponseData UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo);
+        ResponseData UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo, string id);
         ResponseData InsertCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo);
         ResponseData DeleteCompnayGroup(string id);
     }

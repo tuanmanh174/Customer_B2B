@@ -21,7 +21,7 @@ namespace CustomerB2B.ViewModels
             GroupCode = model.Code;
         }
 
-        public CompanyGroup ConvertViewMoodel(CompanyGroupInfoViewModel model)
+        public CompanyGroup ConvertViewModel(CompanyGroupInfoViewModel model)
         {
             return new CompanyGroup
             {

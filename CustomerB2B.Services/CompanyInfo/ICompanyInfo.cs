@@ -1,4 +1,5 @@
-﻿using CustomerB2B.Utilities;
+﻿using CustomerB2B.Models;
+using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,8 @@ namespace CustomerB2B.Services.CompanyInfo
     {
         PagedResult<CompanyInfoViewModel> GetAll(int pageNumber, int pageSize);
         CompanyInfoViewModel GetCompanyById(string id);
-        void UpdateCompany(CompanyInfoViewModel companyInfo);
-        void InsertCompany(CompanyInfoViewModel companyInfo);
-        void DeleteCompany(string id);
+        ResponseData UpdateCompany(CompanyInfoViewModel companyInfo, string id);
+        ResponseData InsertCompany(CompanyInfoViewModel companyInfo);
+        ResponseData DeleteCompany(string id);
     }
 }

@@ -74,7 +74,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             try
             {
 
-                var model = new CompanyGroupInfoViewModel().ConvertViewMoodel(companyGroupInfo);
+                var model = new CompanyGroupInfoViewModel().ConvertViewModel(companyGroupInfo);
                 _unitOfWork.GenericRepository<CompanyGroup>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -91,13 +91,12 @@ namespace CustomerB2B.Services.CompanyGroupInfo
 
         }
 
-        public ResponseData UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo)
+        public ResponseData UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo, string id)
         {
             ResponseData res = new ResponseData();
             try
             {
-                var model = new CompanyGroupInfoViewModel().ConvertViewMoodel(companyGroupInfo);
-                var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(model);
+                var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(id);
                 modelById.Code = companyGroupInfo.GroupCode;
                 modelById.Name = companyGroupInfo.GroupName;
                 modelById.UpdatedDate = DateTime.Now;
@@ -105,7 +104,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
                 res.ResponseMessage = ErrorCode.UPDATE_SUCCESS_MESSAGE;
-                res.Data = model;
+                res.Data = modelById;
             }
             catch (Exception ex)
             {
