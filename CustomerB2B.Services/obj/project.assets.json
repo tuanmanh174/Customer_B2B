@@ -2161,7 +2161,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ken17\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2169,11 +2169,11 @@
       "projectUniqueName": "D:\\Project\\Customer_B2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj",
       "projectName": "CustomerB2B.Services",
       "projectPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Services\\CustomerB2B.Services.csproj",
-      "packagesPath": "C:\\Users\\ken17\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
       "outputPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ken17\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2203,6 +2203,9 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
       }
     },
     "frameworks": {
