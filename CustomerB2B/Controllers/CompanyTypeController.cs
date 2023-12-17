@@ -24,7 +24,7 @@ namespace CustomerB2B.Controllers
             return Ok(lstCompanyGroup);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
             var lstCompanyGroup = _companyTypeInfo.GetCompanyTypeById(id);

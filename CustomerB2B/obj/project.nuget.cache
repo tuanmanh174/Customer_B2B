@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Zcu8RMGfP3r1FrOHu+tZxjkod8BLhIBD7O6R0+Q5nhLpR/PRpDmFi3EEe2NmXwSbzSNRT4IhhDFMpPkqtXcsMQ==",
+  "dgSpecHash": "0RsbG0/KE7Ysuwib2s01BuVpbM6VBR0JcxYroBIXW3rMdjap55CKoVcA50L4SB7upvw/7jOd+vBeoMmJlpjSMA==",
   "success": true,
   "projectFilePath": "D:\\Project\\Customer_B2B\\CustomerB2B\\CustomerB2B.csproj",
   "expectedPackageFiles": [
@@ -240,11 +240,7 @@
     "C:\\Users\\ken17\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\ken17\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\ken17\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\ken17\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\ken17\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\ken17\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\ken17\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\ken17\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+    "C:\\Users\\ken17\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
