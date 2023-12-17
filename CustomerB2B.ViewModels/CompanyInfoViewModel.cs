@@ -16,6 +16,18 @@ namespace CustomerB2B.ViewModels
         public string Name { get; set; }
         // Mã doanh nghiệp trên hệ thống
         public string Code { get; set; }
+        //Ngày tạo bản ghi
+        public DateTime CreatedDate { get; set; }
+        //Ngay cập nhật bản ghi
+        public DateTime UpdatedDate { get; set; }
+        //Người tạo bản ghi
+        public string CreatedBy { get; set; }
+        //Người cập nhật bản ghi
+        public string UpdatedBy { get; set; }
+        //Ghi chú
+        public string Notice { get; set; }
+        //Trạng thái đã xóa hoặc chưa xóa bản ghi
+        public bool IsDeleted { get; set; } = false;
         //Tên nhóm doanh nghiệp thuộc về
         public CompanyGroupInfoViewModel GroupName { get; set; }
         // List loại hình doanh nghiệp mà doanh nghiệp đó thuộc về
