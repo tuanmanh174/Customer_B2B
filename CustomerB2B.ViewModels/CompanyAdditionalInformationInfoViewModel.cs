@@ -45,7 +45,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyAdditionalInformation
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 AccountBank = model.AccountBank,
                 BankName = model.BankName,
                 Founding = model.Founding,

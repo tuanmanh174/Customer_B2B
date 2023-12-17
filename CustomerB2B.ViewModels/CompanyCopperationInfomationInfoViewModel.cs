@@ -41,7 +41,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyCopperationInformation
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 MOU = model.MOU,
                 MouDuration = model.MouDuration,
                 CooperationField = model.CooperationField,

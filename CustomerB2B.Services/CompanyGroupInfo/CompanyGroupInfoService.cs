@@ -73,7 +73,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             ResponseData res = new ResponseData();
             try
             {
-
+                companyGroupInfo.Id = new Guid().ToString();
                 var model = new CompanyGroupInfoViewModel().ConvertViewModel(companyGroupInfo);
                 _unitOfWork.GenericRepository<CompanyGroup>().Add(model);
                 _unitOfWork.Save();

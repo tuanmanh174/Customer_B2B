@@ -40,7 +40,7 @@ namespace CustomerB2B.Controllers
             return Ok(res);
         }
 
-        [HttpPost("update/id")]
+        [HttpPost("update/{id}")]
         public IActionResult Update(string id, [FromBody] CompanyGroupInfoViewModel data)
         {
             if (!ModelState.IsValid)
@@ -51,7 +51,7 @@ namespace CustomerB2B.Controllers
             return Ok(res);
         }
 
-        [HttpPost("delete/id")]
+        [HttpPost("delete/{id}")]
         public IActionResult Remove(string id)
         {
             if (!ModelState.IsValid)

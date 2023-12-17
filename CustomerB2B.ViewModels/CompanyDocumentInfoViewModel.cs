@@ -14,6 +14,7 @@ namespace CustomerB2B.ViewModels
         public string DocumentName { get; set; }
         public string Path { get; set; }
         public int Size { get; set; }
+        public CompanyDocumentInfoViewModel() { }
         public CompanyDocumentInfoViewModel(CompanyDocument model)
         {
             Id = model.Id.ToString();
@@ -28,7 +29,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyDocument
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 CompanyId = model.CompanyId,
                 DocumentName = model.DocumentName,
                 Path = model.Path,

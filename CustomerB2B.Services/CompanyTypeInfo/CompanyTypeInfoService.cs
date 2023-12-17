@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CustomerB2B.Models;
 
 namespace CustomerB2B.Services.CompanyTypeInfo
 {
@@ -18,11 +19,27 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             _unitOfWork = unitOfWork;
         }
 
-        public void DeleteCompanyType(string id)
+        public ResponseData DeleteCompanyType(string id)
         {
-            var model = _unitOfWork.GenericRepository<CompanyType>().GetById(id);
-            _unitOfWork.GenericRepository<CompanyType>().Delete(model);
-            _unitOfWork.Save();
+            ResponseData res = new ResponseData();
+            try
+            {
+                var model = _unitOfWork.GenericRepository<CompanyType>().GetById(id);
+                _unitOfWork.GenericRepository<CompanyType>().Delete(model);
+                _unitOfWork.Save();
+                res.ResponseCode = ErrorCode.SUCCESS_CODE;
+                res.ResponseMessage = ErrorCode.REMOVE_SUCCESS_MESSAGE;
+                res.Data = model;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                res.ResponseCode = ErrorCode.ERROR_SYSTEM_CODE;
+                res.ResponseMessage = ErrorCode.ERROR_SYSTEM_MESSAGE;
+                res.Data = null;
+            }
+            return res;
+
         }
 
         public PagedResult<CompanyTypeInfoViewModel> GetAll(int pageNumber, int pageSize)
@@ -59,22 +76,52 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             return vm;
         }
 
-        public void InsertCompanyType(CompanyTypeInfoViewModel companyTypeInfo)
+        public ResponseData InsertCompanyType(CompanyTypeInfoViewModel companyTypeInfo)
         {
-            var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
-            _unitOfWork.GenericRepository<CompanyType>().Add(model);
-            _unitOfWork.Save();
+            ResponseData res = new ResponseData();
+            try
+            {
+                companyTypeInfo.Id = new Guid().ToString();
+                var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
+                _unitOfWork.GenericRepository<CompanyType>().Add(model);
+                _unitOfWork.Save();
+                res.ResponseCode = ErrorCode.SUCCESS_CODE;
+                res.ResponseMessage = ErrorCode.INSERT_SUCCESS_MESSAGE;
+                res.Data = model;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                res.ResponseCode = ErrorCode.ERROR_SYSTEM_CODE;
+                res.ResponseMessage = ErrorCode.ERROR_SYSTEM_MESSAGE;
+                res.Data = null;
+            }
+            return res;
         }
 
-        public void UpdateCompanyType(CompanyTypeInfoViewModel companyTypeInfo)
+        public ResponseData UpdateCompanyType(CompanyTypeInfoViewModel companyTypeInfo, string id)
         {
-            var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
-            var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(model);
-            modelById.Code = companyTypeInfo.CompanyTypeCode;
-            modelById.Name = companyTypeInfo.CompanyTypeName;
-            modelById.UpdatedDate = DateTime.Now;
-            _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
-            _unitOfWork.Save();
+            ResponseData res = new ResponseData();
+            try
+            {
+                var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
+                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(model);
+                modelById.Code = companyTypeInfo.CompanyTypeCode;
+                modelById.Name = companyTypeInfo.CompanyTypeName;
+                modelById.UpdatedDate = DateTime.Now;
+                _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
+                _unitOfWork.Save();
+                res.ResponseCode = ErrorCode.SUCCESS_CODE;
+                res.ResponseMessage = ErrorCode.UPDATE_SUCCESS_MESSAGE;
+                res.Data = modelById;
+            }
+            catch (Exception ex)
+            {
+                res.ResponseCode = ErrorCode.ERROR_SYSTEM_CODE;
+                res.ResponseMessage = ErrorCode.ERROR_SYSTEM_MESSAGE;
+                res.Data = null;
+            }
+            return res;
         }
 
         private List<CompanyTypeInfoViewModel> ConvertModelToViewModelList(List<CompanyType> modelList)

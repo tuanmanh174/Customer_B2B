@@ -33,7 +33,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyRepresentative
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 DateOfBirth = model.DateOfBirth,
                 Position = model.Position,
                 Gender = model.Gender,

@@ -26,7 +26,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyTypeCompany
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 CompanyId = model.CompanyId,
                 CompanyTypeId = model.CompanyTypeId,
             };

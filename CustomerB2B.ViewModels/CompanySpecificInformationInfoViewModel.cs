@@ -25,7 +25,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanySpecificInformation
             {
-                Id = new Guid(),
+                Id = Guid.Parse(model.Id),
                 Title = model.Title,
                 Description = model.Description
             };

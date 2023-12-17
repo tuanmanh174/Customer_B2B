@@ -1,6 +1,7 @@
 ﻿using CustomerB2B.Models;
 using CustomerB2B.Repositories;
 using CustomerB2B.Repositories.Interfaces;
+using CustomerB2B.Services.CompanyTypeCompanyInfo;
 using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +43,7 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             ResponseData res = new ResponseData();
             try
             {
-
+                companyRepresentativeInfo.Id = new Guid().ToString();
                 var model = new CompanyRepresentativeInfoViewModel().ConvertViewModel(companyRepresentativeInfo);
                 _unitOfWork.GenericRepository<CompanyRepresentative>().Add(model);
                 _unitOfWork.Save();

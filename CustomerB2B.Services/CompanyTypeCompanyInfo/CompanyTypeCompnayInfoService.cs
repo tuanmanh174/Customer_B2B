@@ -2,6 +2,7 @@
 using CustomerB2B.Repositories;
 using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Services.CompanyGroupInfo;
+using CustomerB2B.Services.CompanyTypeInfo;
 using CustomerB2B.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace CustomerB2B.Services.CompanyTypeCompanyInfo
                     res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
                     return res;
                 }
+                companyTypeCompanyInfo.Id = new Guid().ToString();
                 var model = new CompanyTypeCompanyInfoViewModel().ConvertViewModel(companyTypeCompanyInfo);
                 _unitOfWork.GenericRepository<CompanyTypeCompany>().Add(model);
                 _unitOfWork.Save();

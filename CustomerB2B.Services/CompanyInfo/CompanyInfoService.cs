@@ -1,6 +1,7 @@
 ﻿using CustomerB2B.Models;
 using CustomerB2B.Repositories;
 using CustomerB2B.Repositories.Interfaces;
+using CustomerB2B.Services.CompanyRepresentativeInfo;
 using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
 using System;
@@ -90,6 +91,7 @@ namespace CustomerB2B.Services.CompanyInfo
                     res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
                     return res;
                 }
+                companyInfo.Id = new Guid().ToString();
                 var model = new CompanyInfoViewModel().ConvertViewModel(companyInfo, userName);
                 _unitOfWork.GenericRepository<Company>().Add(model);
                 _unitOfWork.Save();

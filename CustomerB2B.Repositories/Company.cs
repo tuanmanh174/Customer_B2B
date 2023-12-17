@@ -15,7 +15,7 @@ namespace CustomerB2B.Repositories
         public string Code { get; set; }
         //Mã số thuế
         public string TaxCode { get; set; }
-        public int PhoneNumber { get; set; }
+        public int? PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         //Thông tin Phường, Xã
