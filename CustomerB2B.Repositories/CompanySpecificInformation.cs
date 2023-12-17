@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CustomerB2B.Repositories
 {
     //Bảng này lưu các thông tin đặc thù trong 1 doanh nghiệp
-    public class SpecificInformation
+    public class CompanySpecificInformation
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
