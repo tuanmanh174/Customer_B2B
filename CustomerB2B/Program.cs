@@ -36,6 +36,16 @@ builder.Services.AddScoped<ICompanyRepresentativeInfo, CompanyRepresentativeInfo
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
@@ -45,9 +55,10 @@ using (var scope = app.Services.CreateScope())
 }
 // Configure the HTTP request pipeline.
 
+
 app.UseSwagger();
 app.UseSwaggerUI();
-
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseAuthentication(); ;
 

@@ -11,7 +11,7 @@ namespace CustomerB2B.ViewModels
     {
         public string CompanyTypeCode { get; set; }
         public string CompanyTypeName { get; set; }
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         //Ngày tạo bản ghi
         public DateTime? CreatedDate { get; set; }
         //Ngay cập nhật bản ghi
@@ -29,7 +29,7 @@ namespace CustomerB2B.ViewModels
 
         public CompanyTypeInfoViewModel(CompanyType model)
         {
-            Id = model.Id.ToString();
+            Id = model.Id;
             CompanyTypeCode = model.Code;
             CompanyTypeName = model.Name;
             CreatedDate = model.CreatedDate;
@@ -43,7 +43,7 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyType
             {
-                Id = Guid.Parse(model.Id),
+                Id = model.Id,
                 Code = model.CompanyTypeCode,
                 Name = model.CompanyTypeName,
                 CreatedDate = model.CreatedDate,
