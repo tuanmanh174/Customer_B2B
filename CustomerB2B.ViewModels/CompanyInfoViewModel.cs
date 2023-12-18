@@ -12,10 +12,19 @@ namespace CustomerB2B.ViewModels
     {
         //Id của doanh nghiệp
         public string Id { get; set; }
-        //Tên doanh nghiệp
+        //Tên khách hàng
         public string Name { get; set; }
-        // Mã doanh nghiệp trên hệ thống
+        //Mã khách hàng
         public string Code { get; set; }
+        //Mã số thuế
+        public string TaxCode { get; set; }
+        public int? PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        //Thông tin Phường, Xã
+        public string DistrictId { get; set; }
+        public string City { get; set; }
+        public string GroupId { get; set; }
         //Ngày tạo bản ghi
         public DateTime? CreatedDate { get; set; }
         //Ngay cập nhật bản ghi
@@ -37,6 +46,18 @@ namespace CustomerB2B.ViewModels
             Id = model.Id.ToString();
             Name = model.Name;
             Code = model.Code;
+            TaxCode = model.TaxCode;
+            PhoneNumber = model.PhoneNumber;
+            Email = model.Email;
+            Address = model.Address;
+            DistrictId = model.DistrictId;
+            GroupId = model.GroupId;
+            City = model.City;
+            Notice = model.Notice;
+            UpdatedBy = model.UpdatedBy;
+            UpdatedDate = DateTime.Now;
+            CreatedBy = model.CreatedBy;
+            CreatedDate = DateTime.Now;
         }
 
         public Company ConvertViewModel(CompanyInfoViewModel model, string userName)
@@ -46,6 +67,16 @@ namespace CustomerB2B.ViewModels
                 Id = Guid.Parse(model.Id),
                 Code = model.Code,
                 Name = model.Name,
+                TaxCode = model.TaxCode,
+                PhoneNumber = model.PhoneNumber,
+                Email = model.Email,
+                Address = model.Address,
+                DistrictId = model.DistrictId,
+                City = model.City,
+                GroupId = model.GroupId,
+                Notice = model.Notice,
+                UpdatedBy = userName,
+                UpdatedDate = DateTime.Now,
                 CreatedBy = userName,
                 CreatedDate = DateTime.Now,
             };

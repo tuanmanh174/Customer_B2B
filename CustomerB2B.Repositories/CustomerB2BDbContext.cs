@@ -1,14 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace CustomerB2B.Repositories
 {
     public class CustomerB2BDbContext : IdentityDbContext
     {
-        public CustomerB2BDbContext(DbContextOptions<CustomerB2BDbContext> options) : base(options)
+        private readonly IConfiguration _configuration;
+        public CustomerB2BDbContext(DbContextOptions<CustomerB2BDbContext> options, IConfiguration configuration) : base(options)
         {
-
+            _configuration = configuration;
         }
+
+
+
+
 
         public DbSet<CompanyType> CompanyTypes { get; set; }
         public DbSet<CompanyGroup> CompanyGroups { get; set; }

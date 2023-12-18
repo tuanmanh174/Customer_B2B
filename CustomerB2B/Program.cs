@@ -1,4 +1,4 @@
-using CustomerB2B.Repositories;
+﻿using CustomerB2B.Repositories;
 using Microsoft.EntityFrameworkCore;
 using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Repositories.Implementation;
@@ -8,6 +8,8 @@ using CustomerB2B.Services.CompanyTypeCompanyInfo;
 using CustomerB2B.Services.CompanyDocumentInfo;
 using CustomerB2B.Services.CompanyInfo;
 using CustomerB2B.Services.CompanyRepresentativeInfo;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<CustomerB2BDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("CustomerB2BConnection")));
+
+
+
+// Apply migration here
 
 
 
@@ -30,14 +36,17 @@ builder.Services.AddScoped<ICompanyRepresentativeInfo, CompanyRepresentativeInfo
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+var app = builder.Build();
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var dbContext = scope.ServiceProvider.GetRequiredService<CustomerB2BDbContext>();
+    dbContext.Database.Migrate();
 }
+// Configure the HTTP request pipeline.
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseAuthentication(); ;
@@ -47,4 +56,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 

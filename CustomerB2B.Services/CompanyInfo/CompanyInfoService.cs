@@ -122,12 +122,19 @@ namespace CustomerB2B.Services.CompanyInfo
                     res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
                     return res;
                 }
-                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(id);
+                var modelById = _unitOfWork.GenericRepository<Company>().GetById(id);
                 modelById.Code = companyInfo.Code;
                 modelById.Name = companyInfo.Name;
+                modelById.PhoneNumber = companyInfo.PhoneNumber;
+                modelById.Address = companyInfo.Address;
+                modelById.City = companyInfo.City;
+                modelById.Notice = companyInfo.Notice;
+                modelById.DistrictId = companyInfo.DistrictId;
+                modelById.Email = companyInfo.Email;
+                modelById.TaxCode = companyInfo.TaxCode;
                 modelById.UpdatedBy = userName;
                 modelById.UpdatedDate = DateTime.Now;
-                _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
+                _unitOfWork.GenericRepository<Company>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
                 res.ResponseMessage = ErrorCode.UPDATE_SUCCESS_MESSAGE;

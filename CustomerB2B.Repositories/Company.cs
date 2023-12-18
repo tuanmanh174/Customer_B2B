@@ -21,5 +21,6 @@ namespace CustomerB2B.Repositories
         //Thông tin Phường, Xã
         public string DistrictId { get; set; }
         public string City { get; set; }
+        public string GroupId { get; set; }
     }
 }
