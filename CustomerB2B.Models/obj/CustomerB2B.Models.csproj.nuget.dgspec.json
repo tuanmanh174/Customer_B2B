@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Project\\Customer_B2B\\CustomerB2B.Models\\CustomerB2B.Models.csproj",
         "projectName": "CustomerB2B.Models",
         "projectPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Models\\CustomerB2B.Models.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\ken17\\.nuget\\packages\\",
         "outputPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ken17\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,9 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "default"
         }
       },
       "frameworks": {

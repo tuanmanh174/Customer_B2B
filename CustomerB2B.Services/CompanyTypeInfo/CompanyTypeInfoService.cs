@@ -28,23 +28,17 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             ResponseData res = new ResponseData();
             try
             {
-                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(Guid.Parse(id.ToUpper()));
-                if (modelById == null)
-                {
-                    res.ResponseCode = ErrorCode.DATA_NOT_EXISTS_CODE;
-                    res.ResponseMessage = ErrorCode.DATA_NOT_EXISTS_MESSAGE;
-                    return res;
-                }
+                var companyTypeId = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(companyTypeId);
                 modelById.IsDeleted = true;
                 _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
-                res.ResponseMessage = ErrorCode.UPDATE_SUCCESS_MESSAGE;
+                res.ResponseMessage = ErrorCode.REMOVE_SUCCESS_MESSAGE;
                 res.Data = modelById;
             }
             catch (Exception ex)
             {
-                ex.ToString();
                 res.ResponseCode = ErrorCode.ERROR_SYSTEM_CODE;
                 res.ResponseMessage = ErrorCode.ERROR_SYSTEM_MESSAGE;
                 res.Data = null;
@@ -87,13 +81,12 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             return vm;
         }
 
-        public ResponseData InsertCompanyType(CompanyTypeInfoViewModel companyTypeInfo)
+        public ResponseData InsertCompanyType(CompanyTypeInsertInfoViewModel companyTypeInfo)
         {
             ResponseData res = new ResponseData();
             try
             {
-                companyTypeInfo.Id = new Guid();
-                var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
+                var model = new CompanyTypeInsertInfoViewModel().ConvertViewModel(companyTypeInfo);
                 _unitOfWork.GenericRepository<CompanyType>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -110,15 +103,13 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             return res;
         }
 
-        public ResponseData UpdateCompanyType(CompanyTypeInfoViewModel companyTypeInfo, string id)
+        public ResponseData UpdateCompanyType(CompanyTypeUpdateInfoViewModel companyTypeInfo, string id)
         {
             ResponseData res = new ResponseData();
             try
             {
-                companyTypeInfo.Id = Guid.Parse(id.ToUpper());
-                var model = new CompanyTypeInfoViewModel().ConvertViewModel(companyTypeInfo);
-                var companyTypeId = companyTypeInfo.Id.ToString().ToUpper();
-                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(Guid.Parse(companyTypeId));
+                var companyTypeId = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(companyTypeId);
                 if (modelById == null)
                 {
                     res.ResponseCode = ErrorCode.DATA_NOT_EXISTS_CODE;
@@ -127,6 +118,8 @@ namespace CustomerB2B.Services.CompanyTypeInfo
                 }
                 modelById.Code = companyTypeInfo.CompanyTypeCode;
                 modelById.Name = companyTypeInfo.CompanyTypeName;
+                modelById.Notice = companyTypeInfo.Notice;
+                modelById.UpdatedBy = "manhdt";
                 modelById.UpdatedDate = DateTime.Now;
                 _unitOfWork.GenericRepository<CompanyType>().Update(modelById);
                 _unitOfWork.Save();

@@ -31,14 +31,13 @@ namespace CustomerB2B.Services.CompanyTypeCompanyInfo
             try
             {
 
-                var modelCompanyTypeCompany = _dbContext.CompanyTypeCompany.Where(x => x.CompanyId == companyTypeCompanyInfo.CompanyId && x.CompanyTypeId == companyTypeCompanyInfo.CompanyTypeId).FirstOrDefault();
+                var modelCompanyTypeCompany = _dbContext.CompanyTypeCompany.Where(x => x.CompanyId == companyTypeCompanyInfo.CompanyId.ToString() && x.CompanyTypeId == companyTypeCompanyInfo.CompanyTypeId.ToString()).FirstOrDefault();
                 if (modelCompanyTypeCompany != null)
                 {
                     res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
                     res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
                     return res;
                 }
-                companyTypeCompanyInfo.Id = new Guid().ToString();
                 var model = new CompanyTypeCompanyInfoViewModel().ConvertViewModel(companyTypeCompanyInfo);
                 _unitOfWork.GenericRepository<CompanyTypeCompany>().Add(model);
                 _unitOfWork.Save();

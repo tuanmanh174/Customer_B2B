@@ -39,8 +39,61 @@ namespace CustomerB2B.ViewModels
                 Gender = model.Gender,
                 PhoneNumber = model.PhoneNumber,
                 Email = model.Email,
-                IsDeleted = false,
-                Name = model.Name
+            };
+        }
+    }
+
+    public class CompanyRepresentativeInsertInfoViewModel
+    {
+        public string Name { get; set; }
+        public string Position { get; set; }
+        public int? Gender { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public string Notice { get; set; }
+        public CompanyRepresentativeInsertInfoViewModel() { }
+
+
+
+        public CompanyRepresentative ConvertViewModel(CompanyRepresentativeInsertInfoViewModel model)
+        {
+            return new CompanyRepresentative
+            {
+                Id = new Guid(),
+                Name = model.Name,
+                Position = model.Position,
+                Gender = model.Gender,
+                PhoneNumber = model.PhoneNumber,
+                Email = model.Email,
+            };
+        }
+    }
+
+
+    public class CompanyRepresentativeUpdateInfoViewModel
+    {
+        public string Name { get; set; }
+        public string Position { get; set; }
+        public int? Gender { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public string Notice { get; set; }
+        public CompanyRepresentativeUpdateInfoViewModel() { }
+
+
+
+        public CompanyRepresentative ConvertViewModel(CompanyRepresentativeUpdateInfoViewModel model)
+        {
+            return new CompanyRepresentative
+            {
+                Name = model.Name,
+                Position = model.Position,
+                Gender = model.Gender,
+                PhoneNumber = model.PhoneNumber,
+                Email = model.Email,
+                DateOfBirth = model.DateOfBirth,
             };
         }
     }

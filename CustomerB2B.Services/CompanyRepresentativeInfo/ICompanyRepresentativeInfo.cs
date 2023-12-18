@@ -13,8 +13,8 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
     public interface ICompanyRepresentativeInfo
     {
         List<CompanyRepresentativeInfoViewModel> GetAll(string companyId);
-        ResponseData UpdateCompanyRepresentative(CompanyRepresentativeInfoViewModel companyInfo, string id);
-        ResponseData InsertCompanyRepresentative(CompanyRepresentativeInfoViewModel companyRepresentativeInfo);
+        ResponseData UpdateCompanyRepresentative(CompanyRepresentativeUpdateInfoViewModel companyInfo, string id);
+        ResponseData InsertCompanyRepresentative(CompanyRepresentativeInsertInfoViewModel companyRepresentativeInfo);
         ResponseData InsertRangeCompanyRepresentative(List<CompanyRepresentative> companyRepresentativeInfo);
     }
 }

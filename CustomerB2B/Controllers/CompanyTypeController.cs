@@ -32,7 +32,7 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CompanyTypeInfoViewModel data)
+        public IActionResult Post([FromBody] CompanyTypeInsertInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {
@@ -43,7 +43,7 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost("update/{id}")]
-        public IActionResult Update(string id, [FromBody] CompanyTypeInfoViewModel data)
+        public IActionResult Update(string id, [FromBody] CompanyTypeUpdateInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {

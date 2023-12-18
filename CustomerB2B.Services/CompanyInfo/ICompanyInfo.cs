@@ -13,8 +13,8 @@ namespace CustomerB2B.Services.CompanyInfo
     {
         PagedResult<CompanyInfoViewModel> GetAll(int pageNumber, int pageSize);
         CompanyInfoViewModel GetCompanyById(string id);
-        ResponseData UpdateCompany(CompanyInfoViewModel companyInfo, string id, string userName);
-        ResponseData InsertCompany(CompanyInfoViewModel companyInfo, string userName);
+        ResponseData UpdateCompany(CompanyUpdateInfoViewModel companyInfo, string id);
+        ResponseData InsertCompany(CompanyInsertInfoViewModel companyInfo);
         ResponseData DeleteCompany(string id);
     }
 }

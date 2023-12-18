@@ -9,26 +9,20 @@ namespace CustomerB2B.ViewModels
 {
     public class CompanyTypeCompanyInfoViewModel
     {
-        public string Id { get; set; }
-        public string CompanyTypeId { get; set; }
-        public string CompanyId { get; set; }
+        public Guid CompanyTypeId { get; set; }
+        public Guid CompanyId { get; set; }
 
         public CompanyTypeCompanyInfoViewModel() { }
 
-        public CompanyTypeCompanyInfoViewModel(CompanyType model)
-        {
-            Id = model.Id.ToString();
-            CompanyTypeId = model.Code;
-            CompanyId = model.Name;
-        }
+
 
         public CompanyTypeCompany ConvertViewModel(CompanyTypeCompanyInfoViewModel model)
         {
             return new CompanyTypeCompany
             {
-                Id = Guid.Parse(model.Id),
-                CompanyId = model.CompanyId,
-                CompanyTypeId = model.CompanyTypeId,
+                Id = new Guid(),
+                CompanyId = model.CompanyId.ToString(),
+                CompanyTypeId = model.CompanyTypeId.ToString(),
             };
         }
     }

@@ -31,24 +31,24 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(string userName, [FromBody] CompanyInfoViewModel data)
+        public IActionResult Post([FromBody] CompanyInsertInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var res = _companyInfo.InsertCompany(data, userName);
+            var res = _companyInfo.InsertCompany(data);
             return Ok(res);
         }
 
         [HttpPost("update/{id}")]
-        public IActionResult Update(string id, string userName, [FromBody] CompanyInfoViewModel data)
+        public IActionResult Update(string id, [FromBody] CompanyUpdateInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var res = _companyInfo.UpdateCompany(data, id, userName);
+            var res = _companyInfo.UpdateCompany(data, id);
             return Ok(res);
         }
 

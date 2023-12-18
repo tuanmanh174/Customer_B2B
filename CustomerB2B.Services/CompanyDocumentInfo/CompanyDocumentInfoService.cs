@@ -32,7 +32,7 @@ namespace CustomerB2B.Services.CompanyDocumentInfo
             List<CompanyDocumentInfoViewModel> vmList = new List<CompanyDocumentInfoViewModel>();
             try
             {
-                var modelList = _unitOfWork.GenericRepository<CompanyDocument>().GetAll().Where(x => x.CompanyId == companyId && x.IsDeleted == false).ToList();
+                var modelList = _unitOfWork.GenericRepository<CompanyDocument>().GetAll().Where(x => x.CompanyId == companyId).ToList();
                 vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)
@@ -81,7 +81,6 @@ namespace CustomerB2B.Services.CompanyDocumentInfo
                 modelById.DocumentName = companyDocumentInfo.DocumentName;
                 modelById.Path = companyDocumentInfo.Path;
                 modelById.Size = companyDocumentInfo.Size;
-                modelById.UpdatedDate = DateTime.Now;
                 _unitOfWork.GenericRepository<CompanyDocument>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;

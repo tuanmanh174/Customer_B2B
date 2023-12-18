@@ -53,10 +53,36 @@ namespace CustomerB2B.Services.CompanyInfo
             try
             {
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
-                var modelList = _unitOfWork.GenericRepository<Company>().GetAll()
-                    .Skip(ExcludeRecords).Take(pageSize).ToList();
-                totalCount = _unitOfWork.GenericRepository<Company>().GetAll().Where(x => x.IsDeleted == false).ToList().Count;
-                vmList = ConvertModelToViewModelList(modelList);
+                vmList = (from a in _dbContext.Companies
+                          join b in _dbContext.CompanyGroups on a.GroupId equals b.Id.ToString()
+                          select new CompanyInfoViewModel
+                          {
+                              Id = a.Id,
+                              Name = a.Name,
+                              Code = a.Code,
+                              TaxCode = a.TaxCode,
+                              PhoneNumber = a.PhoneNumber,
+                              Email = a.Email,
+                              Address = a.Address,
+                              DistrictId = a.DistrictId,
+                              City = a.City,
+                              GroupId = Guid.Parse(a.GroupId),
+                              GroupName = b.Name,
+                              lstCompanyType = (from ctc in _dbContext.CompanyTypeCompany
+                                                join ct in _dbContext.CompanyTypes on ctc.CompanyTypeId equals ct.Id.ToString()
+                                                where ctc.CompanyId == a.Id.ToString()
+                                                select new CompanyTypeInfoViewModel
+                                                {
+                                                    CompanyTypeName = ct.Name,
+                                                    CompanyTypeCode = ct.Code,
+                                                    Notice = ct.Notice,
+                                                    Id = a.Id,
+                                                }).ToList()
+                          }).ToList();
+
+                var modelList = vmList.Skip(ExcludeRecords).Take(pageSize).ToList();
+                totalCount = vmList.Where(x => x.IsDeleted == false).ToList().Count;
+                //vmList = ConvertModelToViewModelList(lst);
             }
             catch (Exception ex)
             {
@@ -79,7 +105,7 @@ namespace CustomerB2B.Services.CompanyInfo
             return vm;
         }
 
-        public ResponseData InsertCompany(CompanyInfoViewModel companyInfo, string userName)
+        public ResponseData InsertCompany(CompanyInsertInfoViewModel companyInfo)
         {
             ResponseData res = new ResponseData();
             try
@@ -92,7 +118,7 @@ namespace CustomerB2B.Services.CompanyInfo
                     return res;
                 }
                 companyInfo.Id = new Guid().ToString();
-                var model = new CompanyInfoViewModel().ConvertViewModel(companyInfo, userName);
+                var model = new CompanyInsertInfoViewModel().ConvertViewModel(companyInfo);
                 _unitOfWork.GenericRepository<Company>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -110,7 +136,7 @@ namespace CustomerB2B.Services.CompanyInfo
 
         }
 
-        public ResponseData UpdateCompany(CompanyInfoViewModel companyInfo, string id, string userName)
+        public ResponseData UpdateCompany(CompanyUpdateInfoViewModel companyInfo, string id)
         {
             ResponseData res = new ResponseData();
             try
@@ -132,7 +158,8 @@ namespace CustomerB2B.Services.CompanyInfo
                 modelById.DistrictId = companyInfo.DistrictId;
                 modelById.Email = companyInfo.Email;
                 modelById.TaxCode = companyInfo.TaxCode;
-                modelById.UpdatedBy = userName;
+                modelById.GroupId = companyInfo.GroupId.ToString();
+                modelById.UpdatedBy = "manhdt";
                 modelById.UpdatedDate = DateTime.Now;
                 _unitOfWork.GenericRepository<Company>().Update(modelById);
                 _unitOfWork.Save();

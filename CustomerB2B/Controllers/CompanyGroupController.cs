@@ -30,7 +30,7 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CompanyGroupInfoViewModel data)
+        public IActionResult Post([FromBody] CompanyGroupInsertInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost("update/{id}")]
-        public IActionResult Update(string id, [FromBody] CompanyGroupInfoViewModel data)
+        public IActionResult Update(string id, [FromBody] CompanyGroupUpdateInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {

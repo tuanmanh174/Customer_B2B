@@ -56,4 +56,53 @@ namespace CustomerB2B.ViewModels
     }
 
 
+    public class CompanyGroupInsertInfoViewModel
+    {
+        public string GroupName { get; set; }
+        public string GroupCode { get; set; }
+        //Ghi chú
+        public string Notice { get; set; }
+        public CompanyGroupInsertInfoViewModel() { }
+
+
+
+        public CompanyGroup ConvertViewModel(CompanyGroupInsertInfoViewModel model)
+        {
+            return new CompanyGroup
+            {
+                Id = new Guid(),
+                Code = model.GroupCode,
+                Name = model.GroupName,
+                CreatedBy = "manhdt",
+                CreatedDate = DateTime.Now,
+                UpdatedBy = "manhdt",
+                IsDeleted = false,
+                Notice = model.Notice,
+            };
+        }
+    }
+
+
+    public class CompanyGroupUpdateInfoViewModel
+    {
+        public string GroupName { get; set; }
+        public string GroupCode { get; set; }
+        //Ghi chú
+        public string Notice { get; set; }
+        public CompanyGroupUpdateInfoViewModel() { }
+
+
+
+        public CompanyGroup ConvertViewModel(CompanyGroupUpdateInfoViewModel model)
+        {
+            return new CompanyGroup
+            {
+                Code = model.GroupCode,
+                Name = model.GroupName,
+                UpdatedBy = "manhdt",
+                Notice = model.Notice,
+            };
+        }
+    }
+
 }

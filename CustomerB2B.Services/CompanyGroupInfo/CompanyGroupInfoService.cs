@@ -3,6 +3,7 @@ using CustomerB2B.Repositories;
 using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
+using System.Security.Cryptography;
 namespace CustomerB2B.Services.CompanyGroupInfo
 {
     public class CompanyGroupInfoService : ICompanyGroupInfo
@@ -18,12 +19,14 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             ResponseData res = new ResponseData();
             try
             {
-                var model = _unitOfWork.GenericRepository<CompanyGroup>().GetById(id);
-                _unitOfWork.GenericRepository<CompanyGroup>().Delete(model);
+                var _id = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(_id);
+                modelById.IsDeleted = true;
+                _unitOfWork.GenericRepository<CompanyGroup>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
                 res.ResponseMessage = ErrorCode.REMOVE_SUCCESS_MESSAGE;
-                res.Data = model;
+                res.Data = modelById;
             }
             catch (Exception ex)
             {
@@ -68,13 +71,12 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             return vm;
         }
 
-        public ResponseData InsertCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo)
+        public ResponseData InsertCompanyGroup(CompanyGroupInsertInfoViewModel companyGroupInfo)
         {
             ResponseData res = new ResponseData();
             try
             {
-                companyGroupInfo.Id = new Guid().ToString();
-                var model = new CompanyGroupInfoViewModel().ConvertViewModel(companyGroupInfo);
+                var model = new CompanyGroupInsertInfoViewModel().ConvertViewModel(companyGroupInfo);
                 _unitOfWork.GenericRepository<CompanyGroup>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -91,15 +93,18 @@ namespace CustomerB2B.Services.CompanyGroupInfo
 
         }
 
-        public ResponseData UpdateCompanyGroup(CompanyGroupInfoViewModel companyGroupInfo, string id)
+        public ResponseData UpdateCompanyGroup(CompanyGroupUpdateInfoViewModel companyGroupInfo, string id)
         {
             ResponseData res = new ResponseData();
             try
             {
-                var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(id);
+                Guid _id = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(_id);
                 modelById.Code = companyGroupInfo.GroupCode;
                 modelById.Name = companyGroupInfo.GroupName;
+                modelById.Notice = companyGroupInfo.Notice;
                 modelById.UpdatedDate = DateTime.Now;
+                modelById.UpdatedBy = "manhdt";
                 _unitOfWork.GenericRepository<CompanyGroup>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;

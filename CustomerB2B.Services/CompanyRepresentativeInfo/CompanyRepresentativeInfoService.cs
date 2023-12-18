@@ -29,7 +29,7 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             List<CompanyRepresentativeInfoViewModel> vmList = new List<CompanyRepresentativeInfoViewModel>();
             try
             {
-                var modelList = _unitOfWork.GenericRepository<CompanyRepresentative>().GetAll().Where(x => x.IsDeleted == false).ToList();
+                var modelList = _unitOfWork.GenericRepository<CompanyRepresentative>().GetAll().ToList();
                 vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)
@@ -38,13 +38,12 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             }
             return vmList;
         }
-        public ResponseData InsertCompanyRepresentative(CompanyRepresentativeInfoViewModel companyRepresentativeInfo)
+        public ResponseData InsertCompanyRepresentative(CompanyRepresentativeInsertInfoViewModel companyRepresentativeInfo)
         {
             ResponseData res = new ResponseData();
             try
             {
-                companyRepresentativeInfo.Id = new Guid().ToString();
-                var model = new CompanyRepresentativeInfoViewModel().ConvertViewModel(companyRepresentativeInfo);
+                var model = new CompanyRepresentativeInsertInfoViewModel().ConvertViewModel(companyRepresentativeInfo);
                 _unitOfWork.GenericRepository<CompanyRepresentative>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
@@ -61,7 +60,7 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             return res;
         }
 
-        public ResponseData UpdateCompanyRepresentative(CompanyRepresentativeInfoViewModel companyRepresentativeInfo, string id)
+        public ResponseData UpdateCompanyRepresentative(CompanyRepresentativeUpdateInfoViewModel companyRepresentativeInfo, string id)
         {
             ResponseData res = new ResponseData();
             try
@@ -69,7 +68,9 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
                 var modelById = _unitOfWork.GenericRepository<CompanyRepresentative>().GetById(id);
                 modelById.PhoneNumber = companyRepresentativeInfo.PhoneNumber;
                 modelById.Gender = companyRepresentativeInfo.Gender;
-                modelById.UpdatedDate = DateTime.Now;
+                modelById.DateOfBirth = companyRepresentativeInfo.DateOfBirth;
+                modelById.Email = companyRepresentativeInfo.Email;
+                modelById.Name = companyRepresentativeInfo.Name;
                 _unitOfWork.GenericRepository<CompanyRepresentative>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;

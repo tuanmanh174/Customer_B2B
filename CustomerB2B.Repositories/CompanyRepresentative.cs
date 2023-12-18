@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CustomerB2B.Repositories
 {
     //Bảng lưu thông tin danh sách người đại diện trong doanh nghiệp
-    public class CompanyRepresentative : BaseEntity
+    public class CompanyRepresentative 
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
