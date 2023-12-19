@@ -45,7 +45,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             try
             {
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
-                var modelList = _unitOfWork.GenericRepository<CompanyGroup>().GetAll()
+                var modelList = _unitOfWork.GenericRepository<CompanyGroup>().GetAll(x => x.IsDeleted == false)
                     .Skip(ExcludeRecords).Take(pageSize).ToList();
                 totalCount = _unitOfWork.GenericRepository<CompanyGroup>().GetAll().ToList().Count;
                 vmList = ConvertModelToViewModelList(modelList);

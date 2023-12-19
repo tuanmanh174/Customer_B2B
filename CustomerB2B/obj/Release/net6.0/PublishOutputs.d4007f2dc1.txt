@@ -24,7 +24,6 @@ D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\MessagePack.An
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Identity.UI.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Build.dll
@@ -50,7 +49,6 @@ D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Enti
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Caching.Memory.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.DependencyModel.dll
-D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 D:\Project\Customer_B2B\CustomerB2B\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.dll

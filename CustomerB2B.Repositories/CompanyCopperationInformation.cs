@@ -9,6 +9,7 @@ namespace CustomerB2B.Repositories
     public class CompanyCopperationInformation
     {
         public Guid Id { get; set; }
+        public string CompanyId { get; set; }
         public bool MOU { get; set; }
         //thời hạn MOU
         public int MouDuration { get; set; }

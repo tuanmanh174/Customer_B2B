@@ -10,6 +10,7 @@ namespace CustomerB2B.Repositories
     public class CompanyAdditionalInformation
     {
         public Guid Id { get; set; }
+        public string CompanyId { get; set; }
         public string AccountBank { get; set; }
         public string BankName { get; set; }
         //Ngày thành lập

@@ -10,6 +10,7 @@ namespace CustomerB2B.Repositories
     public class CompanySpecificInformation
     {
         public Guid Id { get; set; }
+        public string CompanyId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
     }

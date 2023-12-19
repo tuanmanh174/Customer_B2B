@@ -10,6 +10,9 @@ using CustomerB2B.Services.CompanyInfo;
 using CustomerB2B.Services.CompanyRepresentativeInfo;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Hosting;
+using CustomerB2B.Services.CompanyAdditionalInfo;
+using CustomerB2B.Services.CompanyCopperationInfo;
+using CustomerB2B.Services.ICompanySpecificInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +36,9 @@ builder.Services.AddScoped<ICompanyTypeCompanyInfo, CompanyTypeCompnayInfoServic
 builder.Services.AddScoped<ICompanyDocumentInfo, CompanyDocumentInfoService>();
 builder.Services.AddScoped<ICompanyInfo, CompanyInfoService>();
 builder.Services.AddScoped<ICompanyRepresentativeInfo, CompanyRepresentativeInfoService>();
+builder.Services.AddScoped<ICompanyAdditionalInfo, CompanyAdditionalInfoService>();
+builder.Services.AddScoped<ICompanyCopperationInfo, CompanyCopperationInfoService>();
+builder.Services.AddScoped<ICompanySpecificInfo, CompanySpecificService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

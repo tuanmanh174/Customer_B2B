@@ -32,7 +32,7 @@ namespace CustomerB2B.Services.CompanyDocumentInfo
             List<CompanyDocumentInfoViewModel> vmList = new List<CompanyDocumentInfoViewModel>();
             try
             {
-                var modelList = _unitOfWork.GenericRepository<CompanyDocument>().GetAll().Where(x => x.CompanyId == companyId).ToList();
+                var modelList = _unitOfWork.GenericRepository<CompanyDocument>().GetAll(x => x.CompanyId == companyId).ToList();
                 vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)

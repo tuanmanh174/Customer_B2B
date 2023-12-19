@@ -10,6 +10,7 @@ namespace CustomerB2B.ViewModels
     public class CompanyCopperationInformationInfoViewModel
     {
         public string Id { get; set; }
+        public string CompanyId { get; set; }
         public bool MOU { get; set; }
         //thời hạn MOU
         public int MouDuration { get; set; }
@@ -27,6 +28,7 @@ namespace CustomerB2B.ViewModels
         public CompanyCopperationInformationInfoViewModel(CompanyCopperationInformation model)
         {
             Id = model.Id.ToString();
+            CompanyId = model.CompanyId.ToString();
             MOU = model.MOU;
             MouDuration = model.MouDuration;
             CooperationField = model.CooperationField;
@@ -42,6 +44,7 @@ namespace CustomerB2B.ViewModels
             return new CompanyCopperationInformation
             {
                 Id = Guid.Parse(model.Id),
+                CompanyId = model.CompanyId,
                 MOU = model.MOU,
                 MouDuration = model.MouDuration,
                 CooperationField = model.CooperationField,
@@ -49,6 +52,76 @@ namespace CustomerB2B.ViewModels
                 CooperationOther = model.CooperationOther,
                 Product = model.Product,
                 CoordinatingAgent = model.CoordinatingAgent
+            };
+        }
+    }
+
+    public class CompanyCopperationInsertInformationInfoViewModel
+    {
+        public bool MOU { get; set; }
+        public string CompanyId {  get; set; }  
+        //thời hạn MOU
+        public int MouDuration { get; set; }
+        //Lĩnh vực hợp tác
+        public string CooperationField { get; set; }
+        //Tần suất sử dụng
+        public int FrequenceUse { get; set; }
+        //các hợp tác khác
+        public string CooperationOther { get; set; }
+        public string Product { get; set; }
+        //Đại lý phối hợp
+        public string CoordinatingAgent { get; set; }
+        public CompanyCopperationInsertInformationInfoViewModel() { }
+
+
+
+        public CompanyCopperationInformation ConvertViewModel(CompanyCopperationInsertInformationInfoViewModel model)
+        {
+            return new CompanyCopperationInformation
+            {
+                Id = new Guid(),
+                CompanyId = model.CompanyId,
+                MOU = model.MOU,
+                MouDuration = model.MouDuration,
+                CooperationField = model.CooperationField,
+                FrequenceUse = model.FrequenceUse,
+                CooperationOther = model.CooperationOther,
+                Product = model.Product,
+                CoordinatingAgent = model.CoordinatingAgent,
+            };
+        }
+    }
+
+
+    public class CompanyCopperationUpdateInformationInfoViewModel
+    {
+        public bool MOU { get; set; }
+        //thời hạn MOU
+        public int MouDuration { get; set; }
+        //Lĩnh vực hợp tác
+        public string CooperationField { get; set; }
+        //Tần suất sử dụng
+        public int FrequenceUse { get; set; }
+        //các hợp tác khác
+        public string CooperationOther { get; set; }
+        public string Product { get; set; }
+        //Đại lý phối hợp
+        public string CoordinatingAgent { get; set; }
+        public CompanyCopperationUpdateInformationInfoViewModel() { }
+
+
+
+        public CompanyCopperationInformation ConvertViewModel(CompanyCopperationUpdateInformationInfoViewModel model)
+        {
+            return new CompanyCopperationInformation
+            {
+                MOU = model.MOU,
+                MouDuration = model.MouDuration,
+                CooperationField = model.CooperationField,
+                FrequenceUse = model.FrequenceUse,
+                CooperationOther = model.CooperationOther,
+                Product = model.Product,
+                CoordinatingAgent = model.CoordinatingAgent,
             };
         }
     }

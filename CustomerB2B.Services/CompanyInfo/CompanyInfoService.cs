@@ -28,16 +28,17 @@ namespace CustomerB2B.Services.CompanyInfo
             ResponseData res = new ResponseData();
             try
             {
-                var model = _unitOfWork.GenericRepository<CompanyType>().GetById(id);
-                _unitOfWork.GenericRepository<CompanyType>().Delete(model);
+                var _id = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<Company>().GetById(_id);
+                modelById.IsDeleted = true;
+                _unitOfWork.GenericRepository<Company>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;
-                res.ResponseMessage = ErrorCode.INSERT_SUCCESS_MESSAGE;
-                res.Data = model;
+                res.ResponseMessage = ErrorCode.REMOVE_SUCCESS_MESSAGE;
+                res.Data = modelById;
             }
             catch (Exception ex)
             {
-                ex.ToString();
                 res.ResponseCode = ErrorCode.ERROR_SYSTEM_CODE;
                 res.ResponseMessage = ErrorCode.ERROR_SYSTEM_MESSAGE;
                 res.Data = null;
@@ -55,6 +56,7 @@ namespace CustomerB2B.Services.CompanyInfo
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
                 vmList = (from a in _dbContext.Companies
                           join b in _dbContext.CompanyGroups on a.GroupId equals b.Id.ToString()
+                          where a.IsDeleted == false && b.IsDeleted == false
                           select new CompanyInfoViewModel
                           {
                               Id = a.Id,
@@ -82,7 +84,6 @@ namespace CustomerB2B.Services.CompanyInfo
 
                 var modelList = vmList.Skip(ExcludeRecords).Take(pageSize).ToList();
                 totalCount = vmList.Where(x => x.IsDeleted == false).ToList().Count;
-                //vmList = ConvertModelToViewModelList(lst);
             }
             catch (Exception ex)
             {

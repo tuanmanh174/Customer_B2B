@@ -24,6 +24,7 @@ namespace CustomerB2B.ViewModels
         public string Notice { get; set; }
         //Trạng thái đã xóa hoặc chưa xóa bản ghi
         public bool? IsDeleted { get; set; }
+        public bool Status { get; set; }
 
         public CompanyTypeInfoViewModel() { }
 
@@ -37,6 +38,7 @@ namespace CustomerB2B.ViewModels
             CreatedBy = model.CreatedBy;
             UpdatedBy = model.UpdatedBy;
             Notice = model.Notice;
+            Status = model.Status;
         }
 
         public CompanyType ConvertViewModel(CompanyTypeInfoViewModel model)
@@ -51,6 +53,7 @@ namespace CustomerB2B.ViewModels
                 CreatedBy = model.CreatedBy,
                 UpdatedBy = model.UpdatedBy,
                 Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }
@@ -61,6 +64,7 @@ namespace CustomerB2B.ViewModels
         public string CompanyTypeName { get; set; }
         //Ghi chú
         public string Notice { get; set; }
+        public bool Status { get; set; }
         public CompanyTypeInsertInfoViewModel() { }
 
 
@@ -77,6 +81,7 @@ namespace CustomerB2B.ViewModels
                 UpdatedBy = "manhdt",
                 IsDeleted = false,
                 Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }
@@ -88,6 +93,7 @@ namespace CustomerB2B.ViewModels
         public string CompanyTypeName { get; set; }
         //Ghi chú
         public string Notice { get; set; }
+        public bool Status { get; set; }
         public CompanyTypeUpdateInfoViewModel() { }
 
 
@@ -100,6 +106,7 @@ namespace CustomerB2B.ViewModels
                 Name = model.CompanyTypeName,
                 UpdatedBy = "manhdt",
                 Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }

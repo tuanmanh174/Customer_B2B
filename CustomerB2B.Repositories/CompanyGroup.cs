@@ -14,5 +14,6 @@ namespace CustomerB2B.Repositories
         public string Name { get; set; }
         // Mã nhóm khách hàng
         public string Code { get; set; }
+        public bool Status { get; set; }
     }
 }
