@@ -10,6 +10,7 @@ namespace CustomerB2B.Repositories
     public class CompanyRepresentative 
     {
         public Guid Id { get; set; }
+        public string CompanyId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public int? Gender { get; set; }

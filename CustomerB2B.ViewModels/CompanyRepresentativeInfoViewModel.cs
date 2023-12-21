@@ -10,6 +10,7 @@ namespace CustomerB2B.ViewModels
     public class CompanyRepresentativeInfoViewModel
     {
         public string Id { get; set; }
+        public string CompanyId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public int? Gender { get; set; }
@@ -21,6 +22,7 @@ namespace CustomerB2B.ViewModels
         public CompanyRepresentativeInfoViewModel(CompanyRepresentative model)
         {
             Id = model.Id.ToString();
+            CompanyId = model.CompanyId.ToString();
             Name = model.Name;
             Position = model.Position;
             Gender = model.Gender;
@@ -46,6 +48,7 @@ namespace CustomerB2B.ViewModels
     public class CompanyRepresentativeInsertInfoViewModel
     {
         public string Name { get; set; }
+        public string CompanyId { get; set; }
         public string Position { get; set; }
         public int? Gender { get; set; }
         public int PhoneNumber { get; set; }
@@ -61,6 +64,7 @@ namespace CustomerB2B.ViewModels
             return new CompanyRepresentative
             {
                 Id = new Guid(),
+                CompanyId = model.CompanyId,
                 Name = model.Name,
                 Position = model.Position,
                 Gender = model.Gender,

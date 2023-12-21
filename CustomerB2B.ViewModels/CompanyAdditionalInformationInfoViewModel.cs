@@ -96,6 +96,7 @@ namespace CustomerB2B.ViewModels
                 StaffSize = model.StaffSize,
                 DaysOwed = model.DaysOwed,
                 DebtLimit = model.DebtLimit,
+                CustomerFrom = model.CustomerFrom,
             };
         }
     }

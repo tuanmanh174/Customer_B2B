@@ -101,5 +101,8 @@ namespace CustomerB2B.Repositories
         public DbSet<CompanyRepresentative> CompanyRepresentatives { get; set; }
         public DbSet<CompanyDocument> CompanyDocuments { get; set; }
         public DbSet<CompanySpecificInformation> CompanySpecificInformations { get; set; }
+        public DbSet<CompanyAdditionalInformation> CompanyAdditionalInformations { get; set; }
+        public DbSet<CompanyCopperationInformation> CompanyCopperationInformations { get; set; }
+
     }
 }

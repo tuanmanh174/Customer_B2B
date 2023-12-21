@@ -86,6 +86,88 @@ namespace CustomerB2B.Repositories.Migrations
                     b.ToTable("Companies");
                 });
 
+            modelBuilder.Entity("CustomerB2B.Repositories.CompanyAdditionalInformation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AccountBank")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BankName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerFrom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DaysOwed")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("DebtLimit")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("Founding")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Revenue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("StaffSize")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyAdditionalInformations");
+                });
+
+            modelBuilder.Entity("CustomerB2B.Repositories.CompanyCopperationInformation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CooperationField")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CooperationOther")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CoordinatingAgent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FrequenceUse")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("MOU")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MouDuration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Product")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompanyCopperationInformations");
+                });
+
             modelBuilder.Entity("CustomerB2B.Repositories.CompanyDocument", b =>
                 {
                     b.Property<Guid>("Id")
@@ -157,6 +239,10 @@ namespace CustomerB2B.Repositories.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
