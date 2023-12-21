@@ -91,6 +91,8 @@ namespace CustomerB2B.Repositories
             modelBuilder.Entity<Company>()
               .Property(p => p.UpdatedDate)
               .IsRequired(false);
+
+   
         }
 
 
