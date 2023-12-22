@@ -23,6 +23,7 @@ namespace CustomerB2B.ViewModels
         public string Product { get; set; }
         //Đại lý phối hợp
         public string CoordinatingAgent { get; set; }
+        public bool? Status { get; set; }
         public CompanyCopperationInformationInfoViewModel() { }
 
         public CompanyCopperationInformationInfoViewModel(CompanyCopperationInformation model)
@@ -36,6 +37,7 @@ namespace CustomerB2B.ViewModels
             CooperationOther = model.CooperationOther;
             Product = model.Product;
             CoordinatingAgent = model.CoordinatingAgent;
+            Status = model.Status;
 
         }
 
@@ -51,7 +53,8 @@ namespace CustomerB2B.ViewModels
                 FrequenceUse = model.FrequenceUse,
                 CooperationOther = model.CooperationOther,
                 Product = model.Product,
-                CoordinatingAgent = model.CoordinatingAgent
+                CoordinatingAgent = model.CoordinatingAgent,
+                Status = model.Status
             };
         }
     }
@@ -59,7 +62,7 @@ namespace CustomerB2B.ViewModels
     public class CompanyCopperationInsertInformationInfoViewModel
     {
         public bool MOU { get; set; }
-        public string CompanyId {  get; set; }  
+        public string CompanyId { get; set; }
         //thời hạn MOU
         public int MouDuration { get; set; }
         //Lĩnh vực hợp tác
@@ -71,6 +74,7 @@ namespace CustomerB2B.ViewModels
         public string Product { get; set; }
         //Đại lý phối hợp
         public string CoordinatingAgent { get; set; }
+        public bool? Status { get; set; }
         public CompanyCopperationInsertInformationInfoViewModel() { }
 
 
@@ -88,6 +92,7 @@ namespace CustomerB2B.ViewModels
                 CooperationOther = model.CooperationOther,
                 Product = model.Product,
                 CoordinatingAgent = model.CoordinatingAgent,
+                Status = model.Status,
             };
         }
     }
@@ -107,6 +112,7 @@ namespace CustomerB2B.ViewModels
         public string Product { get; set; }
         //Đại lý phối hợp
         public string CoordinatingAgent { get; set; }
+        public bool? Status { get; set; }
         public CompanyCopperationUpdateInformationInfoViewModel() { }
 
 
@@ -122,6 +128,7 @@ namespace CustomerB2B.ViewModels
                 CooperationOther = model.CooperationOther,
                 Product = model.Product,
                 CoordinatingAgent = model.CoordinatingAgent,
+                Status = model.Status,
             };
         }
     }

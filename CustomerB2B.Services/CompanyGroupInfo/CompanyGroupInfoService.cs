@@ -76,6 +76,14 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             ResponseData res = new ResponseData();
             try
             {
+                var modelList = _unitOfWork.GenericRepository<CompanyGroup>().GetAll(x => x.IsDeleted == false && x.Code == companyGroupInfo.GroupCode).FirstOrDefault();
+                if (modelList != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    res.Data = modelList;
+                    return res;
+                }
                 var model = new CompanyGroupInsertInfoViewModel().ConvertViewModel(companyGroupInfo);
                 _unitOfWork.GenericRepository<CompanyGroup>().Add(model);
                 _unitOfWork.Save();
@@ -98,6 +106,14 @@ namespace CustomerB2B.Services.CompanyGroupInfo
             ResponseData res = new ResponseData();
             try
             {
+                var modelList = _unitOfWork.GenericRepository<CompanyGroup>().GetAll(x => x.IsDeleted == false && x.Code == companyGroupInfo.GroupCode && x.Id != Guid.Parse(id)).FirstOrDefault();
+                if (modelList != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    res.Data = modelList;
+                    return res;
+                }
                 Guid _id = Guid.Parse(id);
                 var modelById = _unitOfWork.GenericRepository<CompanyGroup>().GetById(_id);
                 modelById.Code = companyGroupInfo.GroupCode;

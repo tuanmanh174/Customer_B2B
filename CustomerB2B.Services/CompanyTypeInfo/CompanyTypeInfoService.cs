@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using CustomerB2B.Models;
 using System.Security.AccessControl;
 using Microsoft.EntityFrameworkCore;
+using CustomerB2B.Services.CompanyGroupInfo;
 
 namespace CustomerB2B.Services.CompanyTypeInfo
 {
@@ -86,6 +87,14 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             ResponseData res = new ResponseData();
             try
             {
+                var modelList = _unitOfWork.GenericRepository<CompanyType>().GetAll(x => x.IsDeleted == false && x.Code == companyTypeInfo.CompanyTypeCode).FirstOrDefault();
+                if (modelList != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    res.Data = modelList;
+                    return res;
+                }
                 var model = new CompanyTypeInsertInfoViewModel().ConvertViewModel(companyTypeInfo);
                 _unitOfWork.GenericRepository<CompanyType>().Add(model);
                 _unitOfWork.Save();
@@ -108,6 +117,14 @@ namespace CustomerB2B.Services.CompanyTypeInfo
             ResponseData res = new ResponseData();
             try
             {
+                var modelList = _unitOfWork.GenericRepository<CompanyType>().GetAll(x => x.IsDeleted == false && x.Code == companyTypeInfo.CompanyTypeCode && x.Id != Guid.Parse(id)).FirstOrDefault();
+                if (modelList != null)
+                {
+                    res.ResponseCode = ErrorCode.DATA_EXISTS_CODE;
+                    res.ResponseMessage = ErrorCode.DATA_EXISTS_MESSAGE;
+                    res.Data = modelList;
+                    return res;
+                }
                 var companyTypeId = Guid.Parse(id);
                 var modelById = _unitOfWork.GenericRepository<CompanyType>().GetById(companyTypeId);
                 if (modelById == null)

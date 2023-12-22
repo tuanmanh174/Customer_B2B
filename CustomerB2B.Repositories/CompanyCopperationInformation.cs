@@ -22,5 +22,6 @@ namespace CustomerB2B.Repositories
         public string Product { get; set; }
         //Đại lý phối hợp
         public string CoordinatingAgent { get; set; }
+        public bool? Status { get; set; }
     }
 }
