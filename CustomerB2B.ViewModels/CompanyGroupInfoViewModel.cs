@@ -23,6 +23,7 @@ namespace CustomerB2B.ViewModels
         public string Notice { get; set; }
         //Trạng thái đã xóa hoặc chưa xóa bản ghi
         public bool? IsDeleted { get; set; }
+        public bool Status { get; set; }
         public CompanyGroupInfoViewModel() { }
 
         public CompanyGroupInfoViewModel(CompanyGroup model)
@@ -35,6 +36,7 @@ namespace CustomerB2B.ViewModels
             UpdatedBy = model.UpdatedBy;
             IsDeleted = model.IsDeleted;
             Notice = model.Notice;
+            Status = model.Status;
             UpdatedDate = model.UpdatedDate;
         }
 
@@ -50,6 +52,7 @@ namespace CustomerB2B.ViewModels
                 UpdatedBy = model.UpdatedBy,
                 IsDeleted = false,
                 Notice = model.Notice,
+                Status = model.Status,
                 UpdatedDate = model.UpdatedDate,
             };
         }
@@ -62,6 +65,8 @@ namespace CustomerB2B.ViewModels
         public string GroupCode { get; set; }
         //Ghi chú
         public string Notice { get; set; }
+        public bool Status { get; set; } = true;
+
         public CompanyGroupInsertInfoViewModel() { }
 
 
@@ -77,6 +82,7 @@ namespace CustomerB2B.ViewModels
                 CreatedDate = DateTime.Now,
                 UpdatedBy = "manhdt",
                 IsDeleted = false,
+                Status = model.Status,
                 Notice = model.Notice,
             };
         }
@@ -89,6 +95,7 @@ namespace CustomerB2B.ViewModels
         public string GroupCode { get; set; }
         //Ghi chú
         public string Notice { get; set; }
+        public bool Status { get; set; }
         public CompanyGroupUpdateInfoViewModel() { }
 
 
@@ -101,6 +108,7 @@ namespace CustomerB2B.ViewModels
                 Name = model.GroupName,
                 UpdatedBy = "manhdt",
                 Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }
