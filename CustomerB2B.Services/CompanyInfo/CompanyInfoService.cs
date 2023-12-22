@@ -101,7 +101,8 @@ namespace CustomerB2B.Services.CompanyInfo
 
         public CompanyInfoViewModel GetCompanyById(string id)
         {
-            var model = _unitOfWork.GenericRepository<Company>().GetById(id);
+            var _id = Guid.Parse(id);
+            var model = _unitOfWork.GenericRepository<Company>().GetById(_id);
             var vm = new CompanyInfoViewModel(model);
             return vm;
         }

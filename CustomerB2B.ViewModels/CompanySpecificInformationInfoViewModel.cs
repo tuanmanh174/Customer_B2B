@@ -49,7 +49,7 @@ namespace CustomerB2B.ViewModels
             return new CompanySpecificInformation
             {
                 Id = new Guid(),
-                CompanyId = CompanyId,
+                CompanyId = model.CompanyId,
                 Title = model.Title,
                 Description = model.Description,
             };
