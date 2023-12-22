@@ -103,6 +103,7 @@ namespace CustomerB2B.Services.CompanyGroupInfo
                 modelById.Code = companyGroupInfo.GroupCode;
                 modelById.Name = companyGroupInfo.GroupName;
                 modelById.Notice = companyGroupInfo.Notice;
+                modelById.Status = companyGroupInfo.Status;
                 modelById.UpdatedDate = DateTime.Now;
                 modelById.UpdatedBy = "manhdt";
                 _unitOfWork.GenericRepository<CompanyGroup>().Update(modelById);

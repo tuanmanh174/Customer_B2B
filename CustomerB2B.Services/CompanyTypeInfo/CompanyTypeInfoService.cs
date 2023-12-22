@@ -57,7 +57,7 @@ namespace CustomerB2B.Services.CompanyTypeInfo
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
                 var modelList = _unitOfWork.GenericRepository<CompanyType>().GetAll(x => x.IsDeleted == false)
                     .Skip(ExcludeRecords).Take(pageSize).ToList();
-                totalCount = _unitOfWork.GenericRepository<CompanyType>().GetAll().ToList().Count;
+                totalCount = _unitOfWork.GenericRepository<CompanyType>().GetAll(x => x.IsDeleted == false).ToList().Count;
                 vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)
@@ -119,6 +119,7 @@ namespace CustomerB2B.Services.CompanyTypeInfo
                 modelById.Code = companyTypeInfo.CompanyTypeCode;
                 modelById.Name = companyTypeInfo.CompanyTypeName;
                 modelById.Notice = companyTypeInfo.Notice;
+                modelById.Status = companyTypeInfo.Status;
                 modelById.UpdatedBy = "manhdt";
                 modelById.UpdatedDate = DateTime.Now;
                 _unitOfWork.GenericRepository<CompanyType>().Update(modelById);

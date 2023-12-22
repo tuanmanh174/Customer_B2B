@@ -150,6 +150,7 @@ namespace CustomerB2B.Services.CompanyInfo
                     return res;
                 }
                 var modelById = _unitOfWork.GenericRepository<Company>().GetById(id);
+
                 modelById.Code = companyInfo.Code;
                 modelById.Name = companyInfo.Name;
                 modelById.PhoneNumber = companyInfo.PhoneNumber;
@@ -162,6 +163,9 @@ namespace CustomerB2B.Services.CompanyInfo
                 modelById.GroupId = companyInfo.GroupId.ToString();
                 modelById.UpdatedBy = "manhdt";
                 modelById.UpdatedDate = DateTime.Now;
+                modelById.ShortName = companyInfo.ShortName;
+                modelById.Field = companyInfo.Field;
+                modelById.Website = companyInfo.Website;
                 _unitOfWork.GenericRepository<Company>().Update(modelById);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;

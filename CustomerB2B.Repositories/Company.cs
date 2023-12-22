@@ -11,6 +11,9 @@ namespace CustomerB2B.Repositories
         public Guid Id { get; set; }
         //Tên khách hàng
         public string Name { get; set; }
+        public string ShortName { get; set; }
+        public string Field { get; set; }
+        public string Website { get; set; }
         //Mã khách hàng
         public string Code { get; set; }
         //Mã số thuế

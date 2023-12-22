@@ -14,6 +14,9 @@ namespace CustomerB2B.ViewModels
         public Guid Id { get; set; }
         //Tên khách hàng
         public string Name { get; set; }
+        public string ShortName { get; set; }
+        public string Field { get; set; }
+        public string Website { get; set; }
         //Mã khách hàng
         public string Code { get; set; }
         //Mã số thuế
@@ -58,6 +61,9 @@ namespace CustomerB2B.ViewModels
             UpdatedDate = DateTime.Now;
             CreatedBy = model.CreatedBy;
             CreatedDate = DateTime.Now;
+            ShortName = model.ShortName;
+            Field = model.Field;
+            Website = model.Website;
         }
 
         public Company ConvertViewModel(CompanyInfoViewModel model, string userName)
@@ -79,6 +85,9 @@ namespace CustomerB2B.ViewModels
                 UpdatedDate = DateTime.Now,
                 CreatedBy = userName,
                 CreatedDate = DateTime.Now,
+                ShortName = model.ShortName,
+                Field = model.Field,
+                Website = model.Website,
             };
         }
 
@@ -90,6 +99,9 @@ namespace CustomerB2B.ViewModels
         public string Id { get; set; }
         //Tên khách hàng
         public string Name { get; set; }
+        public string ShortName { get; set; }
+        public string Website { get; set; }
+        public string Field { get; set; }
         //Mã khách hàng
         public string Code { get; set; }
         //Mã số thuế
@@ -125,6 +137,9 @@ namespace CustomerB2B.ViewModels
                 CreatedDate = DateTime.Now,
                 IsDeleted = false,
                 Notice = model.Notice,
+                ShortName = model.ShortName,
+                Field = model.Field,
+                Website = model.Website,
             };
         }
     }
@@ -134,6 +149,9 @@ namespace CustomerB2B.ViewModels
     {
         //Tên khách hàng
         public string Name { get; set; }
+        public string ShortName { get; set; }
+        public string Field { get; set; }
+        public string Website { get; set; }
         //Mã khách hàng
         public string Code { get; set; }
         //Mã số thuế
@@ -167,6 +185,9 @@ namespace CustomerB2B.ViewModels
                 UpdatedBy = "manhdt",
                 UpdatedDate = DateTime.Now,
                 Notice = model.Notice,
+                ShortName = model.ShortName,
+                Field = model.Field,
+                Website = model.Website,
             };
         }
     }
