@@ -13,9 +13,13 @@ namespace CustomerB2B.ViewModels
         public string CompanyId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
+        public string Notice { get; set; }
         public int? Gender { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
+        
+        public bool Status { get; set; }
+
         public DateTime? DateOfBirth { get; set; }
         public CompanyRepresentativeInfoViewModel() { }
 
@@ -29,6 +33,8 @@ namespace CustomerB2B.ViewModels
             PhoneNumber = model.PhoneNumber;
             Email = model.Email;
             DateOfBirth = model.DateOfBirth;
+            Notice = model.Notice;
+            Status = model.Status;
         }
 
         public CompanyRepresentative ConvertViewModel(CompanyRepresentativeInfoViewModel model)
@@ -41,6 +47,8 @@ namespace CustomerB2B.ViewModels
                 Gender = model.Gender,
                 PhoneNumber = model.PhoneNumber,
                 Email = model.Email,
+                Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }
@@ -52,6 +60,7 @@ namespace CustomerB2B.ViewModels
         public string Position { get; set; }
         public int? Gender { get; set; }
         public int PhoneNumber { get; set; }
+        public bool Status { get; set; }
         public string Email { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Notice { get; set; }
@@ -70,6 +79,9 @@ namespace CustomerB2B.ViewModels
                 Gender = model.Gender,
                 PhoneNumber = model.PhoneNumber,
                 Email = model.Email,
+                DateOfBirth = model.DateOfBirth,
+                Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }
@@ -82,6 +94,7 @@ namespace CustomerB2B.ViewModels
         public int? Gender { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
+        public bool Status { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Notice { get; set; }
         public CompanyRepresentativeUpdateInfoViewModel() { }
@@ -98,6 +111,8 @@ namespace CustomerB2B.ViewModels
                 PhoneNumber = model.PhoneNumber,
                 Email = model.Email,
                 DateOfBirth = model.DateOfBirth,
+                Notice = model.Notice,
+                Status = model.Status,
             };
         }
     }

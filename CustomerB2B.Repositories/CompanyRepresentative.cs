@@ -13,6 +13,8 @@ namespace CustomerB2B.Repositories
         public string CompanyId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
+        public string Notice { get; set; }
+        public bool Status { get; set; }
         public int? Gender { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
