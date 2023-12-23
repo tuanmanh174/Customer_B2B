@@ -29,7 +29,7 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             List<CompanyRepresentativeInfoViewModel> vmList = new List<CompanyRepresentativeInfoViewModel>();
             try
             {
-                var modelList = _unitOfWork.GenericRepository<CompanyRepresentative>().GetAll().ToList();
+                var modelList = _unitOfWork.GenericRepository<CompanyRepresentative>().GetAll(x => x.CompanyId == companyId).ToList();
                 vmList = ConvertModelToViewModelList(modelList);
             }
             catch (Exception ex)
@@ -65,7 +65,8 @@ namespace CustomerB2B.Services.CompanyRepresentativeInfo
             ResponseData res = new ResponseData();
             try
             {
-                var modelById = _unitOfWork.GenericRepository<CompanyRepresentative>().GetById(id);
+                Guid _id = Guid.Parse(id);
+                var modelById = _unitOfWork.GenericRepository<CompanyRepresentative>().GetById(_id);
                 modelById.PhoneNumber = companyRepresentativeInfo.PhoneNumber;
                 modelById.Gender = companyRepresentativeInfo.Gender;
                 modelById.DateOfBirth = companyRepresentativeInfo.DateOfBirth;

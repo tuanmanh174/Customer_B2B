@@ -2204,7 +2204,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ken17\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2212,11 +2212,11 @@
       "projectUniqueName": "D:\\Project\\Customer_B2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj",
       "projectName": "CustomerB2B.Repositories",
       "projectPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Repositories\\CustomerB2B.Repositories.csproj",
-      "packagesPath": "C:\\Users\\ken17\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
       "outputPath": "D:\\Project\\Customer_B2B\\CustomerB2B.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ken17\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2240,6 +2240,9 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
       }
     },
     "frameworks": {
@@ -2268,6 +2271,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
