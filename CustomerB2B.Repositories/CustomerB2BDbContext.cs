@@ -200,6 +200,9 @@ namespace CustomerB2B.Repositories
             modelBuilder.Entity<CompanyRepresentative>()
                       .Property(p => p.CompanyId)
                       .IsRequired(false);
+            modelBuilder.Entity<CompanyRepresentative>()
+                      .Property(p => p.Notice)
+                      .IsRequired(false);
 
 
             modelBuilder.Entity<CompanySpecificInformation>()
