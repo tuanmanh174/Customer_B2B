@@ -49,13 +49,12 @@ namespace CustomerB2B.Services.CompanyDocumentInfo
             return vm;
         }
 
-        public ResponseData InsertCompanyDocument(CompanyDocumentInfoViewModel companyDocumentInfo)
+        public ResponseData InsertCompanyDocument(CompanyDocumentInsertInfoViewModel companyDocumentInfo)
         {
             ResponseData res = new ResponseData();
             try
             {
-                companyDocumentInfo.Id = new Guid().ToString();
-                var model = new CompanyDocumentInfoViewModel().ConvertViewModel(companyDocumentInfo);
+                var model = new CompanyDocumentInsertInfoViewModel().ConvertViewModel(companyDocumentInfo);
                 _unitOfWork.GenericRepository<CompanyDocument>().Add(model);
                 _unitOfWork.Save();
                 res.ResponseCode = ErrorCode.SUCCESS_CODE;

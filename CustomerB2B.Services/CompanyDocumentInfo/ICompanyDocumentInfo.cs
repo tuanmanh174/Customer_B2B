@@ -14,7 +14,7 @@ namespace CustomerB2B.Services.CompanyDocumentInfo
         List<CompanyDocumentInfoViewModel> GetAll(string companyId);
         CompanyDocumentInfoViewModel GetCompanyDocumentById(string id);
         ResponseData UpdateCompanyDocument(CompanyDocumentInfoViewModel companyDocumentInfo, string id);
-        ResponseData InsertCompanyDocument(CompanyDocumentInfoViewModel companyDocumentInfo);
+        ResponseData InsertCompanyDocument(CompanyDocumentInsertInfoViewModel companyDocumentInfo);
         ResponseData DeleteCompnayDocument(string id);
     }
 }

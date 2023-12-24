@@ -31,7 +31,7 @@ namespace CustomerB2B.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CompanyDocumentInfoViewModel data)
+        public IActionResult Post([FromBody] CompanyDocumentInsertInfoViewModel data)
         {
             if (!ModelState.IsValid)
             {

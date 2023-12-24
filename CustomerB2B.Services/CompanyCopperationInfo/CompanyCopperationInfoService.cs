@@ -13,9 +13,11 @@ namespace CustomerB2B.Services.CompanyCopperationInfo
     public class CompanyCopperationInfoService : ICompanyCopperationInfo
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CompanyCopperationInfoService(IUnitOfWork unitOfWork)
+        private readonly CustomerB2BDbContext _dbContext;
+        public CompanyCopperationInfoService(IUnitOfWork unitOfWork, CustomerB2BDbContext dbContext)
         {
             _unitOfWork = unitOfWork;
+            _dbContext = dbContext;
         }
 
         public ResponseData DeleteCompnayCopperation(string id)
@@ -36,6 +38,18 @@ namespace CustomerB2B.Services.CompanyCopperationInfo
                 throw;
             }
             return vmList;
+        }
+
+        public CompanyCopperationInformationInfoViewModel GeteCompnayCopperationById(string companyId)
+        {
+
+            var model = _dbContext.CompanyCopperationInformations.Where(x => x.CompanyId == companyId).FirstOrDefault();
+            if (model == null)
+            {
+                return null;
+            }
+            var vm = new CompanyCopperationInformationInfoViewModel(model);
+            return vm;
         }
 
         public ResponseData InsertCompanyCopperation(CompanyCopperationInsertInformationInfoViewModel companyAdditionalInfo)

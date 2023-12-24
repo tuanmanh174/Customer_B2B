@@ -29,7 +29,31 @@ namespace CustomerB2B.ViewModels
         {
             return new CompanyDocument
             {
-                Id = Guid.Parse(model.Id),
+                Id = new Guid(),
+                CompanyId = model.CompanyId,
+                DocumentName = model.DocumentName,
+                Path = model.Path,
+                Size = model.Size,
+            };
+        }
+    }
+
+    public class CompanyDocumentInsertInfoViewModel
+    {
+        public string CompanyId { get; set; }
+        public string DocumentName { get; set; }
+        public string Path { get; set; }
+        public int Size { get; set; }
+
+        public CompanyDocumentInsertInfoViewModel() { }
+
+
+
+        public CompanyDocument ConvertViewModel(CompanyDocumentInsertInfoViewModel model)
+        {
+            return new CompanyDocument
+            {
+                Id = new Guid(),
                 CompanyId = model.CompanyId,
                 DocumentName = model.DocumentName,
                 Path = model.Path,
