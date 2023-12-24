@@ -11,6 +11,7 @@ namespace CustomerB2B.Services.CompanyCopperationInfo
     public interface ICompanyCopperationInfo
     {
         List<CompanyCopperationInformationInfoViewModel> GetAll(string companyId);
+        CompanyCopperationInformationInfoViewModel GetCompnayCopperationById(string companyId);
         ResponseData UpdateCompanyCopperation(CompanyCopperationUpdateInformationInfoViewModel companyAdditionalInfo, string id);
         ResponseData InsertCompanyCopperation(CompanyCopperationInsertInformationInfoViewModel companyAdditionalInfo);
         ResponseData DeleteCompnayCopperation(string id);

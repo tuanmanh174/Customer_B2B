@@ -18,8 +18,15 @@ namespace CustomerB2B.Controllers
         [HttpGet]
         public IActionResult Get(string companyId)
         {
-            var lstCompanyAdditional = _companyCopperationInfo.GetAll(companyId);
-            return Ok(lstCompanyAdditional);
+            var lstCompanyCopperation = _companyCopperationInfo.GetAll(companyId);
+            return Ok(lstCompanyCopperation);
+        }
+
+        [HttpGet("GetByCompanyId")]
+        public IActionResult GetById(string companyId)
+        {
+            var companyCopperation = _companyCopperationInfo.GetCompnayCopperationById(companyId);
+            return Ok(companyCopperation);
         }
 
 

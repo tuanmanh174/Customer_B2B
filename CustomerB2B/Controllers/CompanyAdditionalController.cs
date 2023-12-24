@@ -24,6 +24,14 @@ namespace CustomerB2B.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult GetByCompanyId(string companyId)
+        {
+            var companyAdditional = _companyAdditionalInfo.GetCompnayAdditionalById(companyId);
+            return Ok(companyAdditional);
+        }
+
+
         [HttpPost]
         public IActionResult Post([FromBody] CompanyAdditionalInsertInformationInfoViewModel data)
         {

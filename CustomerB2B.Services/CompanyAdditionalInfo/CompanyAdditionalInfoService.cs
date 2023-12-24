@@ -4,6 +4,7 @@ using CustomerB2B.Repositories.Interfaces;
 using CustomerB2B.Services.CompanyGroupInfo;
 using CustomerB2B.Utilities;
 using CustomerB2B.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace CustomerB2B.Services.CompanyAdditionalInfo
     public class CompanyAdditionalInfoService : ICompanyAdditionalInfo
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CompanyAdditionalInfoService(IUnitOfWork unitOfWork)
+        private readonly CustomerB2BDbContext _dbContext;
+        public CompanyAdditionalInfoService(IUnitOfWork unitOfWork, CustomerB2BDbContext dbContext)
         {
             _unitOfWork = unitOfWork;
+            _dbContext = dbContext; 
         }
         public ResponseData DeleteCompnayAdditional(string id)
         {
@@ -56,6 +59,18 @@ namespace CustomerB2B.Services.CompanyAdditionalInfo
                 throw;
             }
             return vmList;
+        }
+
+        public CompanyAdditionalInformationInfoViewModel GetCompnayAdditionalById(string companyId)
+        {
+
+            var model = _dbContext.CompanyAdditionalInformations.Where(x => x.CompanyId == companyId).FirstOrDefault();
+            if (model == null)
+            {
+                return null;
+            }
+            var vm = new CompanyAdditionalInformationInfoViewModel(model);
+            return vm;
         }
 
         public ResponseData InsertCompanyAdditional(CompanyAdditionalInsertInformationInfoViewModel companyAdditionalInfo)

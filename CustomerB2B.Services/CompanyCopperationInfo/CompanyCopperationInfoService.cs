@@ -40,7 +40,7 @@ namespace CustomerB2B.Services.CompanyCopperationInfo
             return vmList;
         }
 
-        public CompanyCopperationInformationInfoViewModel GeteCompnayCopperationById(string companyId)
+        public CompanyCopperationInformationInfoViewModel GetCompnayCopperationById(string companyId)
         {
 
             var model = _dbContext.CompanyCopperationInformations.Where(x => x.CompanyId == companyId).FirstOrDefault();

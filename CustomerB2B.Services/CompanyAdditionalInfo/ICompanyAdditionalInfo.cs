@@ -12,6 +12,7 @@ namespace CustomerB2B.Services.CompanyAdditionalInfo
     public interface ICompanyAdditionalInfo
     {
         List<CompanyAdditionalInformationInfoViewModel> GetAll(string companyId);
+        CompanyAdditionalInformationInfoViewModel GetCompnayAdditionalById(string companyId);
         ResponseData UpdateCompanyAdditional(CompanyAdditionalUpdateInformationInfoViewModel companyAdditionalInfo, string id);
         ResponseData InsertCompanyAdditional(CompanyAdditionalInsertInformationInfoViewModel companyAdditionalInfo);
         ResponseData DeleteCompnayAdditional(string id);
