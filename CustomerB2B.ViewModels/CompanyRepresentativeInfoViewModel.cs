@@ -15,7 +15,7 @@ namespace CustomerB2B.ViewModels
         public string Position { get; set; }
         public string Notice { get; set; }
         public int? Gender { get; set; }
-        public int PhoneNumber { get; set; }
+        public int? PhoneNumber { get; set; }
         public string Email { get; set; }
         
         public bool Status { get; set; }

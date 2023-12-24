@@ -16,6 +16,43 @@ namespace CustomerB2B.Repositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CompanyAdditionalInformation>()
+              .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanyAdditionalInformation>()
+                            .Property(p => p.CompanyId)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanyAdditionalInformation>()
+                           .Property(p => p.AccountBank)
+                           .IsRequired(false);
+            modelBuilder.Entity<CompanyAdditionalInformation>()
+                           .Property(p => p.BankName)
+                           .IsRequired(false);
+            modelBuilder.Entity<CompanyAdditionalInformation>()
+                          .Property(p => p.CustomerFrom)
+                          .IsRequired(false);
+
+
+
+            modelBuilder.Entity<CompanyCopperationInformation>()
+              .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanyCopperationInformation>()
+                            .Property(p => p.CompanyId)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanyCopperationInformation>()
+                          .Property(p => p.CooperationField)
+                          .IsRequired(false);
+            modelBuilder.Entity<CompanyCopperationInformation>()
+                          .Property(p => p.CooperationOther)
+                          .IsRequired(false);
+            modelBuilder.Entity<CompanyCopperationInformation>()
+                          .Property(p => p.Product)
+                          .IsRequired(false);
+            modelBuilder.Entity<CompanyCopperationInformation>()
+                          .Property(p => p.CoordinatingAgent)
+                          .IsRequired(false);
+
 
             modelBuilder.Entity<CompanyGroup>()
                .HasKey(p => p.Id);
@@ -27,6 +64,12 @@ namespace CustomerB2B.Repositories
             modelBuilder.Entity<CompanyGroup>()
                 .Property(p => p.CreatedDate)
                 .IsRequired(false);
+            modelBuilder.Entity<CompanyGroup>()
+               .Property(p => p.Name)
+               .IsRequired(false);
+            modelBuilder.Entity<CompanyGroup>()
+               .Property(p => p.Code)
+               .IsRequired(false);
 
             modelBuilder.Entity<CompanyGroup>()
                 .Property(p => p.Notice)
@@ -65,6 +108,13 @@ namespace CustomerB2B.Repositories
             modelBuilder.Entity<CompanyType>()
               .Property(p => p.UpdatedDate)
               .IsRequired(false);
+            modelBuilder.Entity<CompanyType>()
+               .Property(p => p.Code)
+               .IsRequired(false);
+            modelBuilder.Entity<CompanyType>()
+               .Property(p => p.Name)
+               .IsRequired(false);
+
 
 
 
@@ -91,8 +141,91 @@ namespace CustomerB2B.Repositories
             modelBuilder.Entity<Company>()
               .Property(p => p.UpdatedDate)
               .IsRequired(false);
+            modelBuilder.Entity<Company>()
+            .Property(p => p.Address)
+            .IsRequired(false);
+            modelBuilder.Entity<Company>()
+           .Property(p => p.City)
+           .IsRequired(false);
+            modelBuilder.Entity<Company>()
+          .Property(p => p.DistrictId)
+          .IsRequired(false);
+            modelBuilder.Entity<Company>()
+         .Property(p => p.Email)
+         .IsRequired(false);
+            modelBuilder.Entity<Company>()
+        .Property(p => p.TaxCode)
+        .IsRequired(false);
+            modelBuilder.Entity<Company>()
+       .Property(p => p.GroupId)
+       .IsRequired(false);
+            modelBuilder.Entity<Company>()
+       .Property(p => p.Field)
+       .IsRequired(false);
+            modelBuilder.Entity<Company>()
+       .Property(p => p.ShortName)
+       .IsRequired(false);
+            modelBuilder.Entity<Company>()
+       .Property(p => p.Website)
+       .IsRequired(false);
 
-   
+
+            modelBuilder.Entity<CompanyDocument>()
+                 .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanyDocument>()
+                            .Property(p => p.CompanyId)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanyDocument>()
+                           .Property(p => p.DocumentName)
+                           .IsRequired(false);
+            modelBuilder.Entity<CompanyDocument>()
+                          .Property(p => p.Path)
+                          .IsRequired(false);
+
+
+
+            modelBuilder.Entity<CompanyRepresentative>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanyRepresentative>()
+                            .Property(p => p.Name)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanyRepresentative>()
+                           .Property(p => p.Position)
+                           .IsRequired(false);
+            modelBuilder.Entity<CompanyRepresentative>()
+                       .Property(p => p.Email)
+                       .IsRequired(false);
+            modelBuilder.Entity<CompanyRepresentative>()
+                      .Property(p => p.CompanyId)
+                      .IsRequired(false);
+
+
+            modelBuilder.Entity<CompanySpecificInformation>()
+             .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanySpecificInformation>()
+                            .Property(p => p.Title)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanySpecificInformation>()
+                           .Property(p => p.Description)
+                           .IsRequired(false);
+            modelBuilder.Entity<CompanySpecificInformation>()
+                          .Property(p => p.CompanyId)
+                          .IsRequired(false);
+
+
+            modelBuilder.Entity<CompanyTypeCompany>()
+            .HasKey(p => p.Id);
+
+            modelBuilder.Entity<CompanyTypeCompany>()
+                            .Property(p => p.CompanyId)
+                            .IsRequired(false);
+            modelBuilder.Entity<CompanyTypeCompany>()
+                           .Property(p => p.CompanyTypeId)
+                           .IsRequired(false);
+
         }
 
 

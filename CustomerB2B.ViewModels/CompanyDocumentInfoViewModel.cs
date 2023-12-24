@@ -13,7 +13,7 @@ namespace CustomerB2B.ViewModels
         public string CompanyId { get; set; }
         public string DocumentName { get; set; }
         public string Path { get; set; }
-        public int Size { get; set; }
+        public int? Size { get; set; }
         public CompanyDocumentInfoViewModel() { }
         public CompanyDocumentInfoViewModel(CompanyDocument model)
         {

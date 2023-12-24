@@ -29,11 +29,9 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Code")
@@ -47,19 +45,15 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DistrictId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Field")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GroupId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsDeleted")
@@ -76,11 +70,9 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ShortName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedBy")
@@ -90,7 +82,6 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Website")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -105,19 +96,15 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AccountBank")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BankName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerFrom")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("DaysOwed")
@@ -147,32 +134,27 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CooperationField")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CooperationOther")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CoordinatingAgent")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FrequenceUse")
+                    b.Property<int?>("FrequenceUse")
                         .HasColumnType("int");
 
-                    b.Property<bool>("MOU")
+                    b.Property<bool?>("MOU")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MouDuration")
+                    b.Property<int?>("MouDuration")
                         .HasColumnType("int");
 
                     b.Property<string>("Product")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("Status")
@@ -190,18 +172,15 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DocumentName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Path")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Size")
+                    b.Property<int?>("Size")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -216,7 +195,6 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
@@ -229,7 +207,6 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Notice")
@@ -256,29 +233,32 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Gender")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notice")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
+                    b.Property<int?>("PhoneNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("Position")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -292,15 +272,12 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -315,7 +292,6 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
@@ -328,7 +304,6 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Notice")
@@ -355,11 +330,9 @@ namespace CustomerB2B.Repositories.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CompanyId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CompanyTypeId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

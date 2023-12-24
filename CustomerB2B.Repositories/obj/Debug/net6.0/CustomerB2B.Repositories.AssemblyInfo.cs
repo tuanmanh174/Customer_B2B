@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CustomerB2B.Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a786a9ccfe63ce20a6adf34cf94ebf0cb9735e96")]
 [assembly: System.Reflection.AssemblyProductAttribute("CustomerB2B.Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CustomerB2B.Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

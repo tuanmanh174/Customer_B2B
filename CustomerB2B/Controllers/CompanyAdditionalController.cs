@@ -24,7 +24,7 @@ namespace CustomerB2B.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetByCompanyId")]
         public IActionResult GetByCompanyId(string companyId)
         {
             var companyAdditional = _companyAdditionalInfo.GetCompnayAdditionalById(companyId);
