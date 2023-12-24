@@ -16,7 +16,7 @@ namespace CustomerB2B.Controllers
             _companyAdditionalInfo = companyAdditionalInfo;
         }
 
-        [HttpGet]
+        [HttpGet("GetById")]
         public IActionResult Get(string companyId)
         {
             var lstCompanyAdditional = _companyAdditionalInfo.GetAll(companyId);
